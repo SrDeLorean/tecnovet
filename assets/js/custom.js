@@ -12,7 +12,7 @@ $( document ).ready(function() {
             dataType:'json',
             data:{email:email, password:password},
             success:function(o){
-                if(o.msg ==="0"){
+                if(o.msg =="0"){
                     alert(o.msg,'algo paso'),{
                         type: 'primary',
                         position: 'topright',
