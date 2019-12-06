@@ -8,27 +8,43 @@ class Administrador extends CI_Controller {
     }
     
     public function index(){
-		$this->load->view('templateAdmin/header');
-		$this->load->view('administrador/menuAdministrador');
-		$this->load->view('templateAdmin/footer');
+        if($this->session->userdata("administrador")){
+            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/menuAdministrador');
+            $this->load->view('templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
     }
 
     public function usuarios(){
-     	$this->load->view('templateAdmin/header');
-		$this->load->view('administrador/usuarios');
-		$this->load->view('templateAdmin/footer');
+        if($this->session->userdata("administrador")){
+            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/usuarios');
+            $this->load->view('templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
     }
         
     public function duenos(){
-        $this->load->view('templateAdmin/header');
-        $this->load->view('administrador/duenos');
-        $this->load->view('templateAdmin/footer');
+        if($this->session->userdata("administrador")){
+            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/duenos');
+            $this->load->view('templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
 	}
 
 	// Carga de archivos para el menu ADMINISTRADOR
     public function perfiles(){
-        $this->load->view('templateAdmin/header');
-		$this->load->view('administrador/perfiles');
-		$this->load->view('templateAdmin/footer');
+        if($this->session->userdata("administrador")){
+            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/perfiles');
+            $this->load->view('templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
     }
 }
