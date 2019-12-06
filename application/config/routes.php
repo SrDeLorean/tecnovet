@@ -52,9 +52,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //Menu de interfaces para el Administrador
 
 $route['default_controller'] = 'welcome';
-$route['login'] = 'welcome/index';
+$route['index'] = 'welcome/index';
 $route['registrar'] = 'welcome/registrar';
 $route['login'] = 'welcome/login';
+$route['logout'] = 'welcome/logout';
 $route['crearUsuario'] = 'welcome/crearUsuario';
 
 //Menu de interfaces para el Administrador

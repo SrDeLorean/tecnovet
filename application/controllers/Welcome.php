@@ -20,10 +20,13 @@ class Welcome extends CI_Controller {
 		$arrayUser = $this->usuario->login($email, md5($password));
 		if(count($arrayUser)> 0){
 			if($arrayUser[0]->perfil == 1) {
+				$this->session->set_userdata('administrador',$arrayUser);
 				echo json_encode(array('msg'=>"administrador"));
 			}elseif($arrayUser[0]->perfil == 2) {
+				$this->session->set_userdata('veterinario',$arrayUser);
 				echo json_encode(array('msg'=>"veterinario"));
 			}elseif($arrayUser[0]->perfil == 3) {
+				$this->session->set_userdata('usuario',$arrayUser);
 					echo json_encode(array('msg'=>"usuario"));	
 			}else {
 				echo json_encode(array('msg'=>"0"));
@@ -31,6 +34,11 @@ class Welcome extends CI_Controller {
 		}else{
 			echo json_encode(array('msg'=>"0"));
 		}
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('index');
 	}
 
 	public function crearUsuario(){
