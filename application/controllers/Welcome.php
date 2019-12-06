@@ -3,86 +3,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
-	public function __construct()
-	{
+	public function __construct(){
 		parent::__construct();
 		$this->load->model('usuario');
 	}
-	public function index()
-	{
+	public function index(){
 		$this->load->view('template/header');
 		$this->load->view('login');
 		$this->load->view('template/footer');
 	}
 
-	public function registrar(){
-		$this->load->view('template/header');
-		$this->load->view('registrar');
-		$this->load->view('template/footer');
-	}
-
-	// Carga de archivos para el menu ADMINISTRADOR
-	public function menuAdministrador(){
-		$this->load->view('templateAdmin/header');
-		$this->load->view('menuADministrador');
-		$this->load->view('templateAdmin/footer');
-
-	}
-        
-        public function usuarios() {
-                $this->load->view('templateAdmin/header');
-		$this->load->view('usuarios');
-		$this->load->view('templateAdmin/footer');
-                
-        }
-        
-        public function duenos() {
-        $this->load->view('templateAdmin/header');
-        $this->load->view('duenos');
-        $this->load->view('templateAdmin/footer');
-
-}
-
-	// Carga de archivos para el menu ADMINISTRADOR
-
-        public function perfiles() {
-                $this->load->view('templateAdmin/header');
-		$this->load->view('perfiles');
-		$this->load->view('templateAdmin/footer');
-        }
-
-
+	//Nota: cabe destacar que el email se refiere al tipo del usuario dado que no tengo otro atributo para guardarlo, esto se va a ocupar posiblemente mas adelante
 	public function login(){
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$arrayUser = $this->usuario->login($email, md5($password));
 		if(count($arrayUser)> 0){
 			if($arrayUser[0]->perfil == 1) {
-				echo json_encode(array('msg'=>"Administrador"));
+				$this->session->set_userdata('administrador',$arrayUser);
+				echo json_encode(array('msg'=>"administrador"));
 			}elseif($arrayUser[0]->perfil == 2) {
-				echo json_encode(array('msg'=>"Veterinario"));
+				$this->session->set_userdata('veterinario',$arrayUser);
+				echo json_encode(array('msg'=>"veterinario"));
+			}elseif($arrayUser[0]->perfil == 3) {
+				$this->session->set_userdata('usuario',$arrayUser);
+					echo json_encode(array('msg'=>"usuario"));	
 			}else {
-				echo json_encode(array('msg'=>"Usuario"));
+				echo json_encode(array('msg'=>"0"));
 			}
 		}else{
-			echo json_encode(array('msg'=>"Usuario o Contraseña Invalido"));
+			echo json_encode(array('msg'=>"0"));
 		}
+	}
+
+	public function logout(){
+		$this->session->sess_destroy();
+		redirect('index');
 	}
 
 	public function crearUsuario(){

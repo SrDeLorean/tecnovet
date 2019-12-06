@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    var base_url = "http://localhost/tecnovet_ci/"
+    var base_url = "http://localhost/tecnovet/"
 //-------Login-------------
     $("#bt_login").click(function(e){
         e.preventDefault();
@@ -12,12 +12,16 @@ $( document ).ready(function() {
             dataType:'json',
             data:{email:email, password:password},
             success:function(o){
-                alert(o.msg,'Funciona'),{
-                    type: 'primary',
-                    position: 'topright',
-                    appendType: 'append',
-                    closeBtn: false,
-                    className: ''
+                if(o.msg =="0"){
+                    alert(o.msg,'algo paso'),{
+                        type: 'primary',
+                        position: 'topright',
+                        appendType: 'append',
+                        closeBtn: false,
+                        className: ''
+                    }
+                }else{
+                    window.location.href=base_url+o.msg;
                 }
             },
             error:function(){

@@ -1,3 +1,8 @@
+<?php
+  $user=$this->session->userdata("administrador");
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -38,7 +43,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo base_url()?>menuAdministrador">
+        <a class="nav-link" href="<?php echo base_url()?>administrador">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Inicio</span></a>
       </li>
@@ -184,7 +189,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nombre Usuario</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user[0]->nombre." ".$user[0]->apellido; ?></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
