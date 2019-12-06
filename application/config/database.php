@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '186.64.116.220',
-	'hostname' => 'www.proyectomapache.cl',
-	'username' => 'proyec44_jibarra',
-	'password' => 'Sterek64',
-	'database' => 'proyec44_tecnovet',
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'tecnovet',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
