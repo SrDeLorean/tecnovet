@@ -4,7 +4,8 @@ $( document ).ready(function() {
     $("#bt_login").click(function(e){
         e.preventDefault();
         var email = $("#email").val();
-        var password = $("#password").val();
+        var password = $("#password").val();+
+
         //envio de datos
         $.ajax({
             url:base_url+'login',
