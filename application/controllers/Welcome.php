@@ -13,6 +13,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	public function registrar(){
+		$this->load->view('template/header');
+		$this->load->view('registrar');
+		$this->load->view('template/footer');
+	}
+
 	//Nota: cabe destacar que el email se refiere al tipo del usuario dado que no tengo otro atributo para guardarlo, esto se va a ocupar posiblemente mas adelante
 	public function login(){
 		$email = $this->input->post('email');
