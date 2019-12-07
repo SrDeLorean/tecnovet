@@ -5,7 +5,7 @@ class Welcome extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('usuario');
+		$this->load->model('ModuloDeGestionDeUsuario/usuario');
 	}
 	public function index(){
 		$this->load->view('template/header');

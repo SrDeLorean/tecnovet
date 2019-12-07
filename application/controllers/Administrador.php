@@ -3,6 +3,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Administrador extends CI_Controller {
 
+    /*Para realizar nuevas funciones porfavor utilizar esto para asi mantener los metodos del sistema ocultos
+        *Esto hace referencia a que si no se encuentra logeado como tipo administrador no podra utilizar estos metodos
+    public function nombreFuncion(){    
+        if($this->session->userdata("administrador")){
+            aca va lo que quiera hacer      
+        }else{
+            redirect('index');
+        }
+    */
+
 	public function __construct(){
 		parent::__construct();
     }
