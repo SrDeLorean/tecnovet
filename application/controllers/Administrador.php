@@ -19,9 +19,9 @@ class Administrador extends CI_Controller {
     
     public function index(){
         if($this->session->userdata("administrador")){
-            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/templateAdmin/header');
             $this->load->view('administrador/menuAdministrador');
-            $this->load->view('templateAdmin/footer');
+            $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
         }
@@ -29,9 +29,9 @@ class Administrador extends CI_Controller {
 
     public function usuarios(){
         if($this->session->userdata("administrador")){
-            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/templateAdmin/header');
             $this->load->view('administrador/usuarios');
-            $this->load->view('templateAdmin/footer');
+            $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
         }
@@ -39,9 +39,9 @@ class Administrador extends CI_Controller {
         
     public function duenos(){
         if($this->session->userdata("administrador")){
-            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/templateAdmin/header');
             $this->load->view('administrador/duenos');
-            $this->load->view('templateAdmin/footer');
+            $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
         }
@@ -50,9 +50,9 @@ class Administrador extends CI_Controller {
 	// Carga de archivos para el menu ADMINISTRADOR
     public function perfiles(){
         if($this->session->userdata("administrador")){
-            $this->load->view('templateAdmin/header');
+            $this->load->view('administrador/templateAdmin/header');
             $this->load->view('administrador/perfiles');
-            $this->load->view('templateAdmin/footer');
+            $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
         }
