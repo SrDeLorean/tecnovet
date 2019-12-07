@@ -50,7 +50,7 @@ $( document ).ready(function() {
             processData: false,
             contentType: false,
             cache: false,
-            timeout: 1200000,
+            timeout: 600000,
             success:function(o){
                 alert(o.msg, "registrado");
             },

@@ -7,6 +7,7 @@ class Usuario extends CI_Model {
 		$this->db->where("password",$password);
 		return $this->db->get("usuario")->result();
 	}
+	
 //------------------------Funcion Crear usuario ------------------------
 	public function crearUsuario($rut, $nombre, $apellido, $direccion, $email, $telefono, $password, $foto){
 		$data = array("rut"   =>$rut,
@@ -21,4 +22,5 @@ class Usuario extends CI_Model {
 					"foto"    =>$foto);
 		return $this->db->insert("usuario",$data);
 	}
+
 }
