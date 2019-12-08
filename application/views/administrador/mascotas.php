@@ -3,6 +3,7 @@
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Mascotas</h1>
 <p class="mb-4">Listado de todos las Mascotas en el sistema</p>
+<div class="text-right">Ingresar <button type="button" class="btn btn-primary btn-circle m-1 pb-1 " data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i></button></div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -78,8 +79,7 @@
             echo "<td>inscripción</td>";
             echo "<td>foto</td>";
             echo '<th >'
-              . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button>'
-              .'<button class="btn btn-danger btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalDelete"><i class="fas fa-trash"></i></button>'
+              . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit"></i></button>'
                     . '</th>';
            echo "</tr>";
           }
@@ -98,79 +98,200 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- CRUD MODAL editar Detalle Usuario  -->
 
-<!-- Modal editar User-->
-<div class="modal fade bd-example-modal-lg" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
-<div class="modal-dialog modal-lg" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title" id="modalEdit">Editar Usuario</h5>
-<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-  <span aria-hidden="true">&times;</span>
-</button>
-</div>
-<div class="modal-body">
-<div class="text-center">
-  <img src="..." class="rounded" alt="...">
-</div>
-<div class="p-5">
-      <div class="text-center">
-        <h1 class="h4 text-gray-900 mb-4">'usuario_nombre . usuario_apellido'</h1>
+
+<!-- Modal Agregar User-->
+<div class="modal fade bd-example-modal-lg" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAdd" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalAdd">Agregar Mascota <i class="fas fa-plus"></i></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="p-5">
+            <!-- Por defecto el perfil es usuario y el estado es 1-->
+                <form class="mascotaAdd">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="agregar_usuario" name="usuario" placeholder="RUT Dueño">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="agregar_nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <select class="form-control">
+                      <option>Especie</option>
+                      <option value="1">Perro</option>
+                      <option value="2">Gato</option>
+                      <option value="3">Exotico</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-6">
+                    <select class="form-control">
+                      <option>Raza</option>
+                      <option value="1">Golden Retriever</option>
+                      <option value="2">Akita</option>
+                      <option value="3">Exotico</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <select class="form-control">
+                      <option>Caracter</option>
+                      <option value="1">Agresivo</option>
+                      <option value="2">Docil</option>
+                      <option value="3">Tranquilo</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-6">
+                    <select class="form-control">
+                      <option>Sexo</option>
+                      <option value="1">Macho</option>
+                      <option value="2">Hembra</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="date" class="form-control form-control-user" id="agregar_nacimiento" name="nacimiento" placeholder="Fecha Nacimiento">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="agregar_color" name="color" placeholder="Color">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <select class="form-control">
+                      <option>Estado</option>
+                      <option value="1">Sano</option>
+                      <option value="2">Post-Hoperatorio</option>
+                      <option value="3">Tratamiento</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-6">
+                    <select class="form-control">
+                      <option>Esterizilización</option>
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
+                    </select>
+                    </div>
+                  <!-- La fecha de inscripcion es la cual se crea y la modificiacion es cuando se actualiza-->
+                    <div class="file-field input-field form-group mt-4 file-path-wrapper ">
+                      <input type="file" class="form-control-file file-path validate" id="agregar_foto" name="foto" accept="image/*">
+                    </div>
+                  </div>
+                  <button id="bt_admin_masc_add" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                </form>              
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
       </div>
-      <form class="user">
-      <div class="form-group row">
-          <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
-          </div>
-          <div class="col-sm-6">
-            <input type="text" class="form-control form-control-user" id="editar_apellido" name="apellido" placeholder="Apellido">
-          </div>
+    </div>
+    </div>
+  </div>
+
+<!-- Modal Editar User-->
+<div class="modal fade bd-example-modal-lg" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="modalEditar" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalEditar">Editar Mascota <i class="fas fa-edit"></i></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="form-group row">
-          <div class="col-sm-6 mb-3 mb-sm-0">
-            <input type="text" class="form-control form-control-user" id="editar_rut" name="rut" placeholder="RUT">
-          </div>
-          <div class="col-sm-6">
-            <input type="text" class="form-control form-control-user" id="editar_telefono" name="telefono" placeholder="Telefono">
-          </div>
+        <div class="modal-body">
+          <div class="p-5">
+            <!-- Por defecto el perfil es usuario y el estado es 1-->
+                <form class="mascotaAdd">
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="agregar_usuario" name="usuario" placeholder="RUT Dueño">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="agregar_nombre" name="nombre" placeholder="Nombre">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <select class="form-control">
+                      <option>Especie</option>
+                      <option value="1">Perro</option>
+                      <option value="2">Gato</option>
+                      <option value="3">Exotico</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-6">
+                    <select class="form-control">
+                      <option>Raza</option>
+                      <option value="1">Golden Retriever</option>
+                      <option value="2">Akita</option>
+                      <option value="3">Exotico</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <select class="form-control">
+                      <option>Caracter</option>
+                      <option value="1">Agresivo</option>
+                      <option value="2">Docil</option>
+                      <option value="3">Tranquilo</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-6">
+                    <select class="form-control">
+                      <option>Sexo</option>
+                      <option value="1">Macho</option>
+                      <option value="2">Hembra</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="date" class="form-control form-control-user" id="agregar_nacimiento" name="nacimiento" placeholder="Fecha Nacimiento">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="agregar_color" name="color" placeholder="Color">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <select class="form-control">
+                      <option>Estado</option>
+                      <option value="1">Sano</option>
+                      <option value="2">Post-Hoperatorio</option>
+                      <option value="3">Tratamiento</option>
+                    </select>
+                    </div>
+                    <div class="col-sm-6">
+                    <select class="form-control">
+                      <option>Esterizilización</option>
+                      <option value="1">Si</option>
+                      <option value="0">No</option>
+                    </select>
+                    </div>
+                  <!-- La fecha de inscripcion es la cual se crea y la modificiacion es cuando se actualiza-->
+                    <div class="file-field input-field form-group mt-4 file-path-wrapper ">
+                      <input type="file" class="form-control-file file-path validate" id="agregar_foto" name="foto" accept="image/*">
+                    </div>
+                  </div>
+                  <button id="bt_admin_masc_add" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                </form>              
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control form-control-user" id="editar_direccion" name="direccion" placeholder="Direccion">
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
-        <div class="form-group">
-          <input type="email" class="form-control form-control-user" id="editar_correo" name="email" placeholder="Correo">
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-6 mb-3 mb-sm-0">
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Perfil</label>
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-              <option selected>Perfil Actual</option>
-              <option value="1">Administrador</option>
-              <option value="2">Veterinario</option>
-              <option value="3">Usuario</option>
-            </select>
-          </div>
-          <div class="col-sm-6">                    
-            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Estado</label>
-            <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-              <option selected>Estado Actual</option>
-              <option value="1">Activo</option>
-              <option value="0">Inactivo</option>
-            </select>
-          </div>
-          <div class="file-field input-field form-group mt-4 file-path-wrapper ">
-            <input type="file" class="form-control-file file-path validate" id="editar_foto" name="foto" accept="image/*">
-          </div>
-        </div>
-        <button id="bt_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
-      </form>              
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+      </div>
+    </div>
+    </div>
+  </div>
+
 
