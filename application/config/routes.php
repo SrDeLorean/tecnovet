@@ -63,6 +63,7 @@ $route['crearUsuario'] = 'welcome/crearUsuario';
 $route['menuAdministrador'] = 'administrador/menuAdministrador';
 $route['usuarios'] = 'administrador/usuarios';
 $route['perfiles'] = 'administrador/perfiles';
+$route['mascotas'] = 'administrador/mascotas';
 $route['duenos'] = 'administrador/duenos';
 
 //Menu de interfaces para el Veterinario
