@@ -60,7 +60,7 @@ class Welcome extends CI_Controller {
 
 		if(is_uploaded_file($path) && !empty($_FILES)){
 			$foto = file_get_contents($path);
-			if ($this->usuario->crearUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,md5($password),$foto)){
+			if ($this->usuario->insertarUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,md5($password),$foto)){
 				echo json_encode(array('msg'=>"Registrado"));
 			}else{
 				echo json_encode(array('msg'=>"Error 500"));
