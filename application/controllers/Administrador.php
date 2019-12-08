@@ -57,4 +57,14 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function mascotas(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/mascotas');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+	}
 }
