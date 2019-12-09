@@ -41,6 +41,7 @@
                       <th>Acción</th>
                     </tr>
                   </thead>
+                  
                   <tfoot>
                     <tr>
                       <th>ID</th>
@@ -55,30 +56,50 @@
                       <th>Foto</th>
                       <th>Acción</th>
                     </tr>
-                  </tfoot>
-                  <tbody>
+                    <tbody >
+                    <?php
+
+                        foreach($usuarios->result() as $row){
+                    ?>
+                      <tr>
+                          <td> <?php echo $row->usuario_id; ?></td>
+                          <td> <?php echo $row->usuario_rut; ?></td>
+                          <td> <?php echo $row->usuario_nombre; ?></td>
+                          <td> <?php echo $row->usuario_apellido; ?></td>
+                          <td> <?php echo $row->usuario_email; ?></td>
+                          <td> <?php echo $row->usuario_telefono; ?></td>
+                          <td> <?php echo $row->usuario_direccion; ?></td>
+                          <td> <?php if($row->usuario_perfil == '1'){
+                                        echo 'administrador';
+                                      }
+                                      else if($row->usuario_perfil == '2'){
+                                        echo 'veterinario';
+                                      }
+                                      else if($row->usuario_perfil == '3'){
+                                        echo 'usuario';
+                                      }else{
+                                        echo 'error';
+                                      }    
+                         ?></td>
+                          <td> <?php if($row->usuario_estado == '1'){
+                                        echo 'activo';
+                                      }
+                                      else if($row->usuario_estado == '2'){
+                                        echo 'inactivo';
+                                      }else{
+                                        echo 'error';
+                                      }  
+                          
+                          ?></td>
+                          <td> <?php echo $row->usuario_foto; ?></td>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                      </tr>
                       <?php
-                      for ($i = 1; $i < 20; $i++) {
-                      echo"<tr>" ;
-                      echo "<td>$i</td>";
-                      echo "<td>11111111-1</td>";
-                      echo "<td>Juan</td>";
-                      echo "<td>Perez</td>";
-                      echo "<td>algo@correo.com</td>";
-                      echo "<td>+56994988986</td>";
-                      echo "<td>direccion</td>";
-                      echo "<td>perfil</td>";
-                      echo "<td>activo</td>";
-                      echo "<td>foto</td>";
-                      echo '<th >'
-                        . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button>'
-                              . '</th>';
-                     echo "</tr>";
-                    }
-                      
+                          }
+                          
                       ?>
-                    
                   </tbody>
+                  </tfoot>
                 </table>
               </div>
             </div>
@@ -104,7 +125,7 @@
         </div>
         <div class="modal-body">
           <div class="text-center">
-            <img src="..." class="rounded" alt="...">
+          <!--   <img src="..." class="rounded" alt="...">-->
           </div>
           <div class="p-5">
                 <div class="text-center">
@@ -219,7 +240,7 @@
                       <input type="file" class="form-control-file file-path validate" id="agregar_foto" name="foto" accept="image/*">
                     </div>
                   </div>
-                  <button id="bt_editar" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                  <button id="bt_registrar" class="btn btn-primary btn-user btn-block">Agregar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

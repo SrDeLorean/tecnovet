@@ -28,17 +28,17 @@ class Usuario extends CI_Model {
 	 * usuario_password
 	 * usuario_foto
 	 */
-	public function insertarUsuario($rut, $nombre, $apellido, $direccion, $email, $telefono, $password, $foto){
-		$data = array("usuarios_rut"   =>$rut,
-					"usuario_nombre"  =>$nombre,
-					"usuario_apellido"=>$apellido,
-					"usuario_direccion"=>$direccion,
-					"usuario_email"   =>$email,
-					"usuario_telefono"=>$telefono,
-					"usuario_perfil"  =>3,
-					"usuario_estado"  =>1,
-					"usuario_password"=>$password,
-					"usuario_foto"    =>$foto);
+	public function insertarUsuario($usuarios_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
+		$data = array("usuario_rut"   =>$usuarios_rut,
+				"usuario_nombre"  =>$usuario_nombre,
+				"usuario_apellido"=>$usuario_apellido,
+				"usuario_direccion"=>$usuario_direccion,
+				"usuario_email"   =>$usuario_email,
+				"usuario_telefono"=>$usuario_telefono,
+				"usuario_perfil"  =>$usuario_perfil,
+				"usuario_estado"  =>$usuario_estado,
+				"usuario_password"=>$usuario_password,
+				"usuario_foto"    =>$usuario_foto);
 		return $this->db->insert("usuarios",$data);
 	}
     
@@ -85,7 +85,7 @@ class Usuario extends CI_Model {
 	/**
      * Metodo que devuelve todos los usuario de la bd
      */
-	public function Usuarios(){
-		return $this->db->get("usuarios")->result();
+	public function usuarios(){
+		return $this->db->get("usuarios");
 	}
 }

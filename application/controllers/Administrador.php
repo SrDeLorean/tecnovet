@@ -3,6 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Administrador extends CI_Controller {
 
+    /**
+     * Rutas de las vistas
+     */
+
     /*Para realizar nuevas funciones porfavor utilizar esto para asi mantener los metodos del sistema ocultos
         *Esto hace referencia a que si no se encuentra logeado como tipo administrador no podra utilizar estos metodos
     public function nombreFuncion(){    
@@ -14,7 +18,8 @@ class Administrador extends CI_Controller {
     */
 
 	public function __construct(){
-		parent::__construct();
+        parent::__construct();
+		$this->load->model('ModuloDeGestionDeUsuario/usuario');
     }
     
     public function index(){
@@ -27,10 +32,12 @@ class Administrador extends CI_Controller {
         }
     }
 
-    public function usuarios(){
+    public function usuario(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
-            $this->load->view('administrador/usuarios');
+            $this->load->database();
+            $data["usuarios"] = $this->usuario->usuarios();
+            $this->load->view('administrador/usuario', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
@@ -47,7 +54,6 @@ class Administrador extends CI_Controller {
         }
 	}
 
-	// Carga de archivos para el menu ADMINISTRADOR
     public function perfiles(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -66,5 +72,74 @@ class Administrador extends CI_Controller {
         }else{
             redirect('index');
         }
-	}
+    }
+
+    /**
+     * Fin de rutas a vistas
+     */
+
+
+    /**
+     * Modulo de gestion de usuario
+     */
+    public function crearUsuario(){
+        if($this->session->userdata("administrador")){
+            $usuarios_rut= $this->input->post("usuarios_rut");
+            $usuario_nombre= $this->input->post("usuario_nombre");
+            $usuario_apellido= $this->input->post("usuario_apellido");
+            $usuario_direccion= $this->input->post("usuario_direccion");
+            $usuario_email= $this->input->post("usuario_email");
+            $usuario_telefono= $this->input->post("usuario_telefono");
+            $usuario_perfil= $this->input->post("usuario_perfil");
+            $usuario_estado= $this->input->post("usuario_estado");
+            $usuario_password= $this->input->post("usuario_password");
+            $usuario_foto= $this->input->post("usuario_foto");
+            $this->usuario->crearUsuario($usuarios_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto);
+            echo json_encode(array("msg"=>"Perfil actualizado"));
+        }else{
+            redirect('index');
+        }
+    }
+
+    public function editarUsuario(){
+        if($this->session->userdata("administrador")){
+            $usuario_id= $this->input->post("usuario_id");
+            $usuarios_rut= $this->input->post("usuarios_rut");
+            $usuario_nombre= $this->input->post("usuario_nombre");
+            $usuario_apellido= $this->input->post("usuario_apellido");
+            $usuario_direccion= $this->input->post("usuario_direccion");
+            $usuario_email= $this->input->post("usuario_email");
+            $usuario_telefono= $this->input->post("usuario_telefono");
+            $usuario_perfil= $this->input->post("usuario_perfil");
+            $usuario_estado= $this->input->post("usuario_estado");
+            $usuario_password= $this->input->post("usuario_password");
+            $usuario_foto= $this->input->post("usuario_foto");
+            $this->usuario->editarUsuario($usuario_id, $usuarios_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto);
+            echo json_encode(array("msg"=>"Perfil actualizado"));
+        }else{
+            redirect('index');
+        }
+    }
+
+    public function eliminarUsuario(){
+        if($this->session->userdata("administrador")){
+            $usuario_id= $this->input->post("usuario_id");
+            $this->usuario->eliminarUsuario($usuario_id);
+            echo json_encode(array("msg"=>"Perfil actualizado"));
+        }else{
+            redirect('index');
+        }
+    }
+
+    public function usuarios(){
+        if($this->session->userdata("administrador")){
+            echo json_encode($this->usuario->usuarios());
+        }else{
+            redirect('index');
+        }
+    }
+
+    /**
+     * Finaliza el modulo de gestion de usuario
+     */
 }

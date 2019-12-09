@@ -49,22 +49,33 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-//Menu de interfaces para el Administrador
 
+//Rutas iniciales del sistema
 $route['default_controller'] = 'welcome';
 $route['index'] = 'welcome/index';
 $route['registrar'] = 'welcome/registrar';
 $route['login'] = 'welcome/login';
 $route['logout'] = 'welcome/logout';
 $route['crearUsuario'] = 'welcome/crearUsuario';
+//------------------------------------------------------------------
 
 //Menu de interfaces para el Administrador
-
 $route['menuAdministrador'] = 'administrador/menuAdministrador';
-$route['usuarios'] = 'administrador/usuarios';
+$route['usuario'] = 'administrador/usuario';
 $route['perfiles'] = 'administrador/perfiles';
 $route['mascotas'] = 'administrador/mascotas';
 $route['duenos'] = 'administrador/duenos';
+$route['newUsuario'] = 'administrador/crearUsuario';
+//Modulo de gestion de usuario
+//$route['crearUsuario'] = 'administrador/crearUsuario';
+$route['editarUsuario'] = 'administrador/editarUsuario';
+$route['eliminarUsuario'] = 'administrador/eliminarUsuario';
+$route['usuarios'] = 'administrador/usuarios';
+//-------------------------------------------------------------------
+
+
+
+
 
 //Menu de interfaces para el Veterinario
 

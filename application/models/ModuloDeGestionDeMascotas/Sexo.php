@@ -41,7 +41,7 @@ class Sexo extends CI_Model {
     /**
      * Metodo que devuelve todos los Sexos de la bd
      */
-	public function Sexos(){
+	public function sexos(){
 		return $this->db->get("sexos")->result();
 	}
 }

@@ -23,6 +23,10 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <script>
+        var base_url = "http://localhost/tecnovet/";
+  </script>      
+
 </head>
 
 <body id="page-top">
@@ -65,7 +69,7 @@
         <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Ajustes</h6>
-            <a class="collapse-item" href="<?php echo base_url()?>usuarios">Usuarios</a>
+            <a class="collapse-item" href="<?php echo base_url()?>usuario">Usuarios</a>
             <a class="collapse-item" href="<?php echo base_url()?>perfiles">Perfiles</a>
             
           </div>

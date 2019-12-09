@@ -4,8 +4,7 @@ $( document ).ready(function() {
     $("#bt_login").click(function(e){
         e.preventDefault();
         var email = $("#email").val();
-        var password = $("#password").val();+
-
+        var password = $("#password").val();
         //envio de datos
         $.ajax({
             url:base_url+'login',
@@ -41,7 +40,6 @@ $( document ).ready(function() {
         e.preventDefault();
         var form = $("#form_registrar")[0];
         var data = new FormData(form);
-
         $.ajax({
             url:base_url+'crearUsuario',
             type: 'POST',
@@ -60,4 +58,5 @@ $( document ).ready(function() {
             }
         });
     });
+
 });

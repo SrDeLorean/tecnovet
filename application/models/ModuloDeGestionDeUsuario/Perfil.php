@@ -41,7 +41,7 @@ class Perfil extends CI_Model {
     /**
      * Metodo que devuelve todos los perfiles de la bd
      */
-	public function Perfiles(){
+	public function perfiles(){
 		return $this->db->get("perfiles")->result();
 	}
 }
