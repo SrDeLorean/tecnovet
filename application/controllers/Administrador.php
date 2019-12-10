@@ -66,5 +66,59 @@ class Administrador extends CI_Controller {
         }else{
             redirect('index');
         }
-	}
+    }
+    public function estados(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/estados');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function caracteres(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/caracteres');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function sexos(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/sexos');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function especies(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/especies');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function razas(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/razas');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function fichas(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->view('administrador/fichas');
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
 }

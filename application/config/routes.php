@@ -65,6 +65,12 @@ $route['usuarios'] = 'administrador/usuarios';
 $route['perfiles'] = 'administrador/perfiles';
 $route['mascotas'] = 'administrador/mascotas';
 $route['duenos'] = 'administrador/duenos';
+$route['estados'] = 'administrador/estados';
+$route['caracteres'] = 'administrador/caracteres';
+$route['sexos'] = 'administrador/sexos';
+$route['especies'] = 'administrador/especies';
+$route['razas'] = 'administrador/razas';
+$route['fichas'] = 'administrador/fichas';
 
 //Menu de interfaces para el Veterinario
 
