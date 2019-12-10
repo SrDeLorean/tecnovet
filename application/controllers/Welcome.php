@@ -48,25 +48,25 @@ class Welcome extends CI_Controller {
 	}
 
 	public function crearUsuario(){
-		$rut 		= $this->input->post("rut");
-		$nombre 	= $this->input->post("nombre");
-		$apellido	= $this->input->post("apellido");
-		$direccion	= $this->input->post("direccion");
-		$email 		= $this->input->post("email");
-		$telefono	= $this->input->post("telefono");
-		$password	= $this->input->post("password");
+		$usuario_rut		= $this->input->post("usuario_rut");
+		$usuario_nombre 	= $this->input->post("usuario_nombre");
+		$usuario_apellido	= $this->input->post("usuario_apellido");
+		$usuario_direccion	= $this->input->post("usuario_direccion");
+		$usuario_email 		= $this->input->post("usuario_email");
+		$usuario_telefono	= $this->input->post("usuario_telefono");
+		$usuario_password	= $this->input->post("usuario_password");
+		$usuario_perfil = '3';
+		$usuario_estado = '1';
 //---------------Esto da ERROR no reconoce laubicacion "foto" por lo que considera que no hay imagen-----------------
-		$path 		= $_FILES["foto"]["tmp_name"];
-
+		$path 		= $_FILES["usuario_foto"]["tmp_name"];
+		$usuario_foto= '';
 		if(is_uploaded_file($path) && !empty($_FILES)){
-			$foto = file_get_contents($path);
-			if ($this->usuario->insertarUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,md5($password),$foto)){
-				echo json_encode(array('msg'=>"Registrado"));
-			}else{
-				echo json_encode(array('msg'=>"Error 500"));
-			}
+			$usuario_foto = file_get_contents($path);
+		}
+		if ($this->usuario->insertarUsuario($usuario_rut,$usuario_nombre,$usuario_apellido,$usuario_direccion,$usuario_email,$usuario_telefono ,$usuario_perfil, $usuario_estado,md5($usuario_password),$usuario_foto)){
+			echo json_encode(array('msg'=>"Registrado"));
 		}else{
-			//echo json_encode(array('msg'=>"Error de archivo"));
+			echo json_encode(array('msg'=>"Error 500"));
 		}
 	}
 
