@@ -72,7 +72,11 @@ $route['especies'] = 'administrador/especies';
 $route['razas'] = 'administrador/razas';
 $route['fichas'] = 'administrador/fichas';
 
-
+//Modulo de gestion de usuario
+//$route['crearUsuario'] = 'administrador/crearUsuario';
+$route['editarUsuario'] = 'administrador/editarUsuario';
+$route['eliminarUsuario'] = 'administrador/eliminarUsuario';
+$route['usuarios'] = 'administrador/usuarios';
 
 
 
