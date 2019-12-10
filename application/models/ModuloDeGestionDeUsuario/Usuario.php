@@ -28,8 +28,8 @@ class Usuario extends CI_Model {
 	 * usuario_password
 	 * usuario_foto
 	 */
-	public function insertarUsuario($usuarios_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
-		$data = array("usuario_rut"   =>$usuarios_rut,
+	public function insertarUsuario($usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
+		$data = array("usuario_rut"   =>$usuario_rut,
 				"usuario_nombre"  =>$usuario_nombre,
 				"usuario_apellido"=>$usuario_apellido,
 				"usuario_direccion"=>$usuario_direccion,
@@ -57,9 +57,9 @@ class Usuario extends CI_Model {
 	 * usuario_password: elemento a modificar
 	 * usuario_foto: elemento a modificar
      */
-    public function editarUsuario($usuario_id, $usuarios_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
+    public function editarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
 		$this->db->where("usuario_id", $usuario_id);
-		$data = array("usuario_rut"   =>$usuarios_rut,
+		$data = array("usuario_rut"   =>$usuario_rut,
 					"usuario_nombre"  =>$usuario_nombre,
 					"usuario_apellido"=>$usuario_apellido,
 					"usuario_direccion"=>$usuario_direccion,

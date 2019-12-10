@@ -42,6 +42,6 @@ class Consulta extends CI_Model {
      * Metodo que devuelve todos los consultas de la bd
      */
 	public function consultas(){
-		return $this->db->get("consultas")->result();
+		return $this->db->get("consultas");
 	}
 }

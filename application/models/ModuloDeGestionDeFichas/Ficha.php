@@ -39,6 +39,6 @@ class Ficha extends CI_Model {
      * Metodo que devuelve todos los vacunas de la bd
      */
 	public function fichas(){
-		return $this->db->get("fichas")->result();
+		return $this->db->get("fichas");
 	}
 }

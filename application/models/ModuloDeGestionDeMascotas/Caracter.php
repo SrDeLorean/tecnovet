@@ -42,6 +42,6 @@ class Caracter extends CI_Model {
      * Metodo que devuelve todos los caracteres de la bd
      */
 	public function caracteres(){
-		return $this->db->get("caracteres")->result();
+		return $this->db->get("caracteres");
 	}
 }

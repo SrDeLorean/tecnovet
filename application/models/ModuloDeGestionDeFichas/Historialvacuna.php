@@ -42,6 +42,6 @@ class Historialvacuna extends CI_Model {
      * Metodo que devuelve todos los historialvacuna de la bd
      */
 	public function historialvacunas(){
-		return $this->db->get("historialvacunas")->result();
+		return $this->db->get("historialvacunas");
 	}
 }

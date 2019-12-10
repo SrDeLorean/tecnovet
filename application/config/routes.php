@@ -62,15 +62,15 @@ $route['crearUsuario'] = 'welcome/crearUsuario';
 //Menu de interfaces para el Administrador
 $route['menuAdministrador'] = 'administrador/menuAdministrador';
 $route['usuario'] = 'administrador/usuario';
-$route['perfiles'] = 'administrador/perfiles';
-$route['mascotas'] = 'administrador/mascotas';
-$route['duenos'] = 'administrador/duenos';
-$route['estados'] = 'administrador/estados';
-$route['caracteres'] = 'administrador/caracteres';
-$route['sexos'] = 'administrador/sexos';
-$route['especies'] = 'administrador/especies';
-$route['razas'] = 'administrador/razas';
-$route['fichas'] = 'administrador/fichas';
+$route['perfil'] = 'administrador/perfil';
+$route['mascota'] = 'administrador/mascota';
+$route['dueno'] = 'administrador/dueno';
+$route['estado'] = 'administrador/estado';
+$route['caracter'] = 'administrador/caracter';
+$route['sexo'] = 'administrador/sexo';
+$route['especie'] = 'administrador/especie';
+$route['raza'] = 'administrador/raza';
+$route['ficha'] = 'administrador/ficha';
 
 //Modulo de gestion de usuario
 //$route['crearUsuario'] = 'administrador/crearUsuario';

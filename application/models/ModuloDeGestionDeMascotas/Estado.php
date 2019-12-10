@@ -42,6 +42,6 @@ class Estado extends CI_Model {
      * Metodo que devuelve todos los estados de la bd
      */
 	public function estados(){
-		return $this->db->get("estados")->result();
+		return $this->db->get("estados");
 	}
 }

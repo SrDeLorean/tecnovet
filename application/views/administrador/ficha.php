@@ -43,25 +43,25 @@
             <th>Acción</th>
           </tr>
         </tfoot>
-        <tbody>
-            <?php
-            for ($i = 1; $i <= 20; $i++) {
-            echo"<tr>" ;
-            echo "<td>$i</td>";
-            echo "<td>Mascota</td>";
-            echo "<td>alguna fecha</td>";
-            echo "<td>confirmo fecha</td>";
-            echo "<td>inscripion al sistema</td>";
-            echo "<td>ultima acualización</td>";
-            echo '<th >'
-              . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit"></i></button>'
-                    . '</th>';
-           echo "</tr>";
-          }
-            
-            ?>
-          
-        </tbody>
+        <tbody >
+                    <?php
+
+                        foreach($fichas->result() as $row){
+                    ?>
+                      <tr>
+                          <td> <?php echo $row->vacuna_id; ?></td>
+                          <td> <?php echo $row->vacuna_mascota; ?></td>
+                          <td> <?php echo $row->vacuna_control; ?></td>
+                          <td> <?php echo $row->vacuna_confirmacion; ?></td>
+                          <td> <?php echo $row->vacuna_creacion; ?></td>
+                          <td> <?php echo $row->vacuna_actualizacion; ?></td>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                      </tr>
+                      <?php
+                          }
+                          
+                      ?>
+                  </tbody>
       </table>
     </div>
   </div>

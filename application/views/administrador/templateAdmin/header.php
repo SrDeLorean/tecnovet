@@ -70,7 +70,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Ajustes</h6>
             <a class="collapse-item" href="<?php echo base_url()?>usuario">Usuarios</a>
-            <a class="collapse-item" href="<?php echo base_url()?>perfiles">Perfiles</a>
+            <a class="collapse-item" href="<?php echo base_url()?>perfil">Perfiles</a>
             
           </div>
         </div>
@@ -85,12 +85,12 @@
         <div id="collapsePets" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Ajustes:</h6>
-            <a class="collapse-item" href="<?php echo base_url()?>mascotas">Mascotas</a>
-            <a class="collapse-item" href="<?php echo base_url()?>estados">Estado Mascota</a>
-            <a class="collapse-item" href="<?php echo base_url()?>caracteres">Caracter</a>
-            <a class="collapse-item" href="<?php echo base_url()?>sexos">Sexo</a>
-            <a class="collapse-item" href="<?php echo base_url()?>especies">Especie</a>
-            <a class="collapse-item" href="<?php echo base_url()?>razas">Raza</a>
+            <a class="collapse-item" href="<?php echo base_url()?>mascota">Mascotas</a>
+            <a class="collapse-item" href="<?php echo base_url()?>estado">Estado Mascota</a>
+            <a class="collapse-item" href="<?php echo base_url()?>caracter">Caracter</a>
+            <a class="collapse-item" href="<?php echo base_url()?>sexo">Sexo</a>
+            <a class="collapse-item" href="<?php echo base_url()?>especie">Especie</a>
+            <a class="collapse-item" href="<?php echo base_url()?>raza">Raza</a>
           </div>
         </div>
       </li>
@@ -104,7 +104,7 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Ajustes:</h6>
-            <a class="collapse-item" href="<?php echo base_url()?>fichas">Fichas</a>
+            <a class="collapse-item" href="<?php echo base_url()?>ficha">Fichas</a>
             <a class="collapse-item" href="utilities-color.html">Visitas</a>
             <a class="collapse-item" href="utilities-border.html">Vacunas</a>
             <a class="collapse-item" href="utilities-animation.html">Tratamientos</a>
@@ -131,7 +131,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Datos</h6>
-            <a class="collapse-item" href="<?php echo base_url()?>duenos">Dueños</a>
+            <a class="collapse-item" href="<?php echo base_url()?>dueno">Dueños</a>
             <a class="collapse-item" href="register.html">Mascotas</a>
             <a class="collapse-item" href="forgot-password.html">Fichas</a>
             <h6 class="collapse-header">Other Pages:</h6>

@@ -42,6 +42,6 @@ class Historialtratamiento extends CI_Model {
      * Metodo que devuelve todos los historialtratamiento de la bd
      */
 	public function historialtratamientos(){
-		return $this->db->get("historialtratamiento")->result();
+		return $this->db->get("historialtratamiento");
 	}
 }

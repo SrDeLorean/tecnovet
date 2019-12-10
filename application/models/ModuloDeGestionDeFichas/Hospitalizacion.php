@@ -42,6 +42,6 @@ class Hospitalizacion extends CI_Model {
      * Metodo que devuelve todos los hospitalizacions de la bd
      */
 	public function hospitalizaciones(){
-		return $this->db->get("hospitalizaciones")->result();
+		return $this->db->get("hospitalizaciones");
 	}
 }

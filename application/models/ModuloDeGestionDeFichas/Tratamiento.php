@@ -42,6 +42,6 @@ class Tratamiento extends CI_Model {
      * Metodo que devuelve todos los tratamientos de la bd
      */
 	public function tratamientos(){
-		return $this->db->get("tratamientos")->result();
+		return $this->db->get("tratamientos");
 	}
 }

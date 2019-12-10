@@ -53,6 +53,6 @@ class Visita extends CI_Model {
      * Metodo que devuelve todos los visitaes de la bd
      */
 	public function visitas(){
-		return $this->db->get("visitas")->result();
+		return $this->db->get("visitas");
 	}
 }

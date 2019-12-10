@@ -46,6 +46,6 @@ class Vacuna extends CI_Model {
      * Metodo que devuelve todos los vacunas de la bd
      */
 	public function vacunas(){
-		return $this->db->get("vacunas")->result();
+		return $this->db->get("vacunas");
 	}
 }
