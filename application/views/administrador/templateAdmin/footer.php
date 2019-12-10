@@ -1,11 +1,4 @@
 <!--- Footer -->
-<footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Proyecto Mapache &copy; Desarrollo Web 2020</span>
-          </div>
-        </div>
-      </footer>
       <!-- End of Footer -->
 
     </div>
@@ -47,14 +40,13 @@
 
   <!-- Custom scripts for all pages-->
   <script src="<?php echo base_url();?>assets/js/sb-admin-2.min.js"></script>
-
+  <script src="<?php echo base_url();?>assets/js/custom.js"></script>
   <!-- Page level plugins -->
   <script src="<?php echo base_url();?>assets/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
   <script src="<?php echo base_url();?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?php echo base_url();?>assets/js/demo/chart-pie-demo.js"></script>
-
 </body>
 
 </html>

@@ -23,6 +23,10 @@
   <!-- Custom styles for this template-->
   <link href="<?php echo base_url();?>assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <script>
+        var base_url = "http://localhost/tecnovet/";
+  </script>      
+
 </head>
 
 <body id="page-top">
@@ -44,7 +48,7 @@
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo base_url()?>administrador">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <i class="fas fa-fw fa-home"></i>
           <span>Inicio</span></a>
       </li>
 
@@ -56,18 +60,37 @@
         Administración
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - Pages Collapse User -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Sistema</span>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUser" aria-expanded="true" aria-controls="collapseUser">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Usuarios</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseUser" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Ajustes</h6>
-            <a class="collapse-item" href="<?php echo base_url()?>usuarios">Usuarios</a>
-            <a class="collapse-item" href="<?php echo base_url()?>perfiles">Perfiles</a>
-            <a class="collapse-item" href="cards.html">Mascotas </a>
+            <a class="collapse-item" href="<?php echo base_url()?>usuario">Usuarios</a>
+            <a class="collapse-item" href="<?php echo base_url()?>perfil">Perfiles</a>
+            
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Mascotas -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePets" aria-expanded="true" aria-controls="collapsePets">
+          <i class="fas fa-fw fa-paw"></i>
+          <span>Mascotas</span>
+        </a>
+        <div id="collapsePets" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Ajustes:</h6>
+            <a class="collapse-item" href="<?php echo base_url()?>mascota">Mascotas</a>
+            <a class="collapse-item" href="<?php echo base_url()?>estado">Estado Mascota</a>
+            <a class="collapse-item" href="<?php echo base_url()?>caracter">Caracter</a>
+            <a class="collapse-item" href="<?php echo base_url()?>sexo">Sexo</a>
+            <a class="collapse-item" href="<?php echo base_url()?>especie">Especie</a>
+            <a class="collapse-item" href="<?php echo base_url()?>raza">Raza</a>
           </div>
         </div>
       </li>
@@ -75,16 +98,18 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <i class="fas fa-fw fa-file-alt"></i>
+          <span>Fichas</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <h6 class="collapse-header">Ajustes:</h6>
+            <a class="collapse-item" href="<?php echo base_url()?>ficha">Fichas</a>
+            <a class="collapse-item" href="utilities-color.html">Visitas</a>
+            <a class="collapse-item" href="utilities-border.html">Vacunas</a>
+            <a class="collapse-item" href="utilities-animation.html">Tratamientos</a>
+            <a class="collapse-item" href="utilities-other.html">Hospitalizaciones</a>
+            <a class="collapse-item" href="utilities-other.html">Consultas</a>
           </div>
         </div>
       </li>
@@ -105,11 +130,10 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Clientes</h6>
-            <a class="collapse-item" href="<?php echo base_url()?>duenos">Dueños</a>
+            <h6 class="collapse-header">Datos</h6>
+            <a class="collapse-item" href="<?php echo base_url()?>dueno">Dueños</a>
             <a class="collapse-item" href="register.html">Mascotas</a>
             <a class="collapse-item" href="forgot-password.html">Fichas</a>
-            <div class="collapse-divider"></div>
             <h6 class="collapse-header">Other Pages:</h6>
             <a class="collapse-item" href="404.html">404 Page</a>
             <a class="collapse-item" href="blank.html">Blank Page</a>
@@ -189,7 +213,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user[0]->nombre." ".$user[0]->apellido; ?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $user[0]->usuario_nombre." ".$user[0]->usuario_apellido; ?></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->

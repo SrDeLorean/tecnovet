@@ -5,11 +5,17 @@ class Welcome extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('usuario');
+		$this->load->model('ModuloDeGestionDeUsuario/usuario');
 	}
 	public function index(){
 		$this->load->view('template/header');
 		$this->load->view('login');
+		$this->load->view('template/footer');
+	}
+
+	public function registrar(){
+		$this->load->view('template/header');
+		$this->load->view('registrar');
 		$this->load->view('template/footer');
 	}
 
@@ -19,13 +25,13 @@ class Welcome extends CI_Controller {
 		$password = $this->input->post('password');
 		$arrayUser = $this->usuario->login($email, md5($password));
 		if(count($arrayUser)> 0){
-			if($arrayUser[0]->perfil == 1) {
+			if($arrayUser[0]->usuario_perfil == 1) {
 				$this->session->set_userdata('administrador',$arrayUser);
 				echo json_encode(array('msg'=>"administrador"));
-			}elseif($arrayUser[0]->perfil == 2) {
+			}elseif($arrayUser[0]->usuario_perfil == 2) {
 				$this->session->set_userdata('veterinario',$arrayUser);
 				echo json_encode(array('msg'=>"veterinario"));
-			}elseif($arrayUser[0]->perfil == 3) {
+			}elseif($arrayUser[0]->usuario_perfil == 3) {
 				$this->session->set_userdata('usuario',$arrayUser);
 					echo json_encode(array('msg'=>"usuario"));	
 			}else {
@@ -54,7 +60,7 @@ class Welcome extends CI_Controller {
 
 		if(is_uploaded_file($path) && !empty($_FILES)){
 			$foto = file_get_contents($path);
-			if ($this->usuario->crearUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,md5($password),$foto)){
+			if ($this->usuario->insertarUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,md5($password),$foto)){
 				echo json_encode(array('msg'=>"Registrado"));
 			}else{
 				echo json_encode(array('msg'=>"Error 500"));

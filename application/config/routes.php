@@ -49,21 +49,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-//Menu de interfaces para el Administrador
 
+//Rutas iniciales del sistema
 $route['default_controller'] = 'welcome';
 $route['index'] = 'welcome/index';
 $route['registrar'] = 'welcome/registrar';
 $route['login'] = 'welcome/login';
 $route['logout'] = 'welcome/logout';
 $route['crearUsuario'] = 'welcome/crearUsuario';
+//------------------------------------------------------------------
 
 //Menu de interfaces para el Administrador
-
 $route['menuAdministrador'] = 'administrador/menuAdministrador';
+$route['usuario'] = 'administrador/usuario';
+$route['perfil'] = 'administrador/perfil';
+$route['mascota'] = 'administrador/mascota';
+$route['dueno'] = 'administrador/dueno';
+$route['estado'] = 'administrador/estado';
+$route['caracter'] = 'administrador/caracter';
+$route['sexo'] = 'administrador/sexo';
+$route['especie'] = 'administrador/especie';
+$route['raza'] = 'administrador/raza';
+$route['ficha'] = 'administrador/ficha';
+
+//Modulo de gestion de usuario
+//$route['crearUsuario'] = 'administrador/crearUsuario';
+$route['editarUsuario'] = 'administrador/editarUsuario';
+$route['eliminarUsuario'] = 'administrador/eliminarUsuario';
 $route['usuarios'] = 'administrador/usuarios';
-$route['perfiles'] = 'administrador/perfiles';
-$route['duenos'] = 'administrador/duenos';
+
+
 
 //Menu de interfaces para el Veterinario
 

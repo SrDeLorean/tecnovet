@@ -40,7 +40,6 @@ $( document ).ready(function() {
         e.preventDefault();
         var form = $("#form_registrar")[0];
         var data = new FormData(form);
-
         $.ajax({
             url:base_url+'crearUsuario',
             type: 'POST',
@@ -50,7 +49,7 @@ $( document ).ready(function() {
             processData: false,
             contentType: false,
             cache: false,
-            timeout: 1200000,
+            timeout: 600000,
             success:function(o){
                 alert(o.msg, "registrado");
             },
@@ -59,4 +58,5 @@ $( document ).ready(function() {
             }
         });
     });
+
 });
