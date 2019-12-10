@@ -65,13 +65,12 @@ $route['usuario'] = 'administrador/usuario';
 $route['perfiles'] = 'administrador/perfiles';
 $route['mascotas'] = 'administrador/mascotas';
 $route['duenos'] = 'administrador/duenos';
-$route['newUsuario'] = 'administrador/crearUsuario';
-//Modulo de gestion de usuario
-//$route['crearUsuario'] = 'administrador/crearUsuario';
-$route['editarUsuario'] = 'administrador/editarUsuario';
-$route['eliminarUsuario'] = 'administrador/eliminarUsuario';
-$route['usuarios'] = 'administrador/usuarios';
-//-------------------------------------------------------------------
+$route['estados'] = 'administrador/estados';
+$route['caracteres'] = 'administrador/caracteres';
+$route['sexos'] = 'administrador/sexos';
+$route['especies'] = 'administrador/especies';
+$route['razas'] = 'administrador/razas';
+$route['fichas'] = 'administrador/fichas';
 
 
 
