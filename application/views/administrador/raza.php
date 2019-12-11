@@ -28,6 +28,7 @@
                       <th>ID</th>
                       <th>Nombre</th>
                       <th>Descripción</th>
+                      <th>Especie</th>
                       <th>Acción</th>
                     </tr>
                   </thead>
@@ -36,6 +37,7 @@
                       <th>N°</th>
                       <th>Nombre</th>
                       <th>Descripción</th>
+                      <th>Especie</th>
                       <th>Acción</th>
 
                     </tr>

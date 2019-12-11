@@ -49,12 +49,12 @@
                         foreach($fichas->result() as $row){
                     ?>
                       <tr>
-                          <td> <?php echo $row->vacuna_id; ?></td>
-                          <td> <?php echo $row->vacuna_mascota; ?></td>
-                          <td> <?php echo $row->vacuna_control; ?></td>
-                          <td> <?php echo $row->vacuna_confirmacion; ?></td>
-                          <td> <?php echo $row->vacuna_creacion; ?></td>
-                          <td> <?php echo $row->vacuna_actualizacion; ?></td>
+                          <td> <?php echo $row->ficha_id; ?></td>
+                          <td> <?php echo $row->ficha_mascota; ?></td>
+                          <td> <?php echo $row->ficha_control; ?></td>
+                          <td> <?php echo $row->ficha_confirmacion; ?></td>
+                          <td> <?php echo $row->ficha_creacion; ?></td>
+                          <td> <?php echo $row->ficha_actualizacion; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
