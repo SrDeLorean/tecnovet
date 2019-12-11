@@ -90,6 +90,6 @@ class Mascota extends CI_Model {
      * Metodo que devuelve todos los mascotas de la bd
      */
 	public function mascotas(){
-		return $this->db->get("mascotas")->result();
+		return $this->db->get("mascotas");
 	}
 }

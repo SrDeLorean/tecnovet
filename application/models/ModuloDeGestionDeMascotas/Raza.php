@@ -10,7 +10,7 @@ class Raza extends CI_Model {
      * raza_especie
      */
     public function insertarRaza($raza_nombre, $raza_descripcion, $raza_especie){
-        $data = array("raza_nombre"   =>$raza_nombre,
+      $data = array("raza_nombre"   =>$raza_nombre,
                     "raza_descripcion"   =>$raza_descripcion,
                     "raza_especie"   =>$raza_especie);      
 		return $this->db->insert("razas",$data);
@@ -25,11 +25,11 @@ class Raza extends CI_Model {
      * raza_especie: elemento a modificar
      */
     public function editarRaza($raza_id, $raza_nombre, $raza_descripcion, $raza_especie){
-        $this->db->where("raza_id", $raza_id);
-		$data = array("raza_nombre"   =>$raza_nombre,
+      $this->db->where("raza_id", $raza_id);
+		  $data = array("raza_nombre"   =>$raza_nombre,
                     "raza_descripcion"   =>$raza_descripcion,
                     "raza_especie"   =>$raza_especie);       
-		return $this->db->update("razas",$data);
+		  return $this->db->update("razas",$data);
 	}
     
     /**
@@ -38,14 +38,14 @@ class Raza extends CI_Model {
      * raza_id
      */
     public function eliminarRaza($raza_id){
-		$this->db->where("raza_id", $raza_id);
-		return $this->db->delete("razas");
+		  $this->db->where("raza_id", $raza_id);
+		  return $this->db->delete("razas");
     }
 
     /**
      * Metodo que devuelve todos los razas de la bd
      */
-	public function razas(){
-		return $this->db->get("razas")->result();
-	}
+    public function razas(){
+      return $this->db->get("razas");
+    }
 }

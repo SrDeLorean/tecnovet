@@ -42,6 +42,6 @@ class Especie extends CI_Model {
      * Metodo que devuelve todos los especies de la bd
      */
 	public function especies(){
-		return $this->db->get("especies")->result();
+		return $this->db->get("especies");
 	}
 }

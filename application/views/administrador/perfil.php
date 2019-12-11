@@ -2,8 +2,8 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Razas</h1>
-          <p class="mb-4">Listado de  los Razas hablitados en el sistema </p>
+          <h1 class="h3 mb-2 text-gray-800">Perfiles</h1>
+          <p class="mb-4">Listado de  los Perfiles hablitados en el sistema </p>
           <div class="text-right">Ingresar <button type="button" class="btn btn-primary btn-circle m-1 pb-1 " data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i></button></div> 
 
           <!-- DataTales Example -->
@@ -11,7 +11,7 @@
             <div class="card-header py-3">
                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
-                  <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar razas" aria-label="Search" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar perfil" aria-label="Search" aria-describedby="basic-addon2">
                   <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
                       <i class="fas fa-search fa-sm"></i>
@@ -40,21 +40,21 @@
 
                     </tr>
                   </tfoot>
-                  <tbody>
+                  <tbody >
+                    <?php
+
+                        foreach($perfiles->result() as $row){
+                    ?>
+                      <tr>
+                          <td> <?php echo $row->perfil_id; ?></td>
+                          <td> <?php echo $row->perfil_nombre; ?></td>
+                          <td> <?php echo $row->perfil_descripcion; ?></td>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                      </tr>
                       <?php
-                      for ($i = 1; $i <= 5; $i++) {
-                      echo"<tr>" ;
-                      echo "<td>$i</td>";
-                      echo "<td>nombre razas</td>";
-                      echo "<td>descripcion de razas</td>";
-                      echo '<th >'
-                        . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button>'
-                              . '</th>';
-                     echo "</tr>";
-                    }
-                      
+                          }
+                          
                       ?>
-                    
                   </tbody>
                 </table>
               </div>
@@ -74,7 +74,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalEdit">Editar Raza</h5>
+          <h5 class="modal-title" id="modalEdit">Editar Perfil</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -82,7 +82,7 @@
         <div class="modal-body">
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'raza_nombre'</h1>
+                  <h1 class="h4 text-gray-900 mb-4">'perfil_nombre'</h1>
                 </div>
                 <form class="perfil">
     
@@ -93,7 +93,7 @@
                     <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
                   </div>
                   
-                  <button id="bt_raza_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_perfil_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">
@@ -111,7 +111,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalAdd">Agregar Raza <i class="fas fa-plus"></i></h5>
+          <h5 class="modal-title" id="modalAdd">Agregar Perfil <i class="fas fa-plus"></i></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -119,15 +119,15 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-            <form class="especieAgregar">    
+            <form id="form_registrar" class="estadoAdd">    
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
+                <input type="text" class="form-control form-control-user" id="perfil_nombre" name="perfil_nombre" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control form-control-user" id="perfil_descripcion" name="perfil_descripcion" placeholder="Descripcion">
               </div>
               
-              <button id="bt_raza_agregar" class="btn btn-primary btn-user btn-block">Agregar</button>                
+              <button id="bt_perfil_agregar" class="btn btn-primary btn-user btn-block">Agregar</button>                
             </form>               
         </div>
         <div class="modal-footer">

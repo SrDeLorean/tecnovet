@@ -34,13 +34,14 @@
                       <th>Apellido</th>
                       <th>Correo</th>
                       <th>Telefono</th>
-                      <th>Direccion</th>
+                      <th>Dirección</th>
                       <th>Perfil</th>
                       <th>Estado</th>
                       <th>Foto</th>
                       <th>Acción</th>
                     </tr>
                   </thead>
+                  
                   <tfoot>
                     <tr>
                       <th>ID</th>
@@ -49,36 +50,55 @@
                       <th>Apellido</th>
                       <th>Correo</th>
                       <th>Telefono</th>
-                      <th>Direccion</th>
+                      <th>Dirección</th>
                       <th>Perfil</th>
                       <th>Estado</th>
                       <th>Foto</th>
                       <th>Acción</th>
                     </tr>
-                  </tfoot>
-                  <tbody>
+                    <tbody >
+                    <?php
+                        foreach($usuarios->result() as $row){
+                    ?>
+                      <tr>
+                          <td> <?php echo $row->usuario_id; ?></td>
+                          <td> <?php echo $row->usuario_rut; ?></td>
+                          <td> <?php echo $row->usuario_nombre; ?></td>
+                          <td> <?php echo $row->usuario_apellido; ?></td>
+                          <td> <?php echo $row->usuario_email; ?></td>
+                          <td> <?php echo $row->usuario_telefono; ?></td>
+                          <td> <?php echo $row->usuario_direccion; ?></td>
+                          <td> <?php if($row->usuario_perfil == '1'){
+                                        echo 'administrador';
+                                      }
+                                      else if($row->usuario_perfil == '2'){
+                                        echo 'veterinario';
+                                      }
+                                      else if($row->usuario_perfil == '3'){
+                                        echo 'usuario';
+                                      }else{
+                                        echo 'error';
+                                      }    
+                         ?></td>
+                          <td> <?php if($row->usuario_estado == '1'){
+                                        echo 'activo';
+                                      }
+                                      else if($row->usuario_estado == '2'){
+                                        echo 'inactivo';
+                                      }else{
+                                        echo 'error';
+                                      }  
+                          
+                          ?></td>
+                          <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->usuario_foto) .'"class="img-fluid img-responsive " width="200" height="200"/>'; ?></td>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1" href="#" role="button" data-toggle="modal" data-target="#modalEdit" value="<?php $row->usuario_id ?>"><i class="fas fa-edit"></i></button></th>
+                      </tr>
                       <?php
-                      for ($i = 1; $i < 20; $i++) {
-                      echo"<tr>" ;
-                      echo "<td>$i</td>";
-                      echo "<td>11111111-1</td>";
-                      echo "<td>Juan</td>";
-                      echo "<td>Perez</td>";
-                      echo "<td>algo@correo.com</td>";
-                      echo "<td>+56994988986</td>";
-                      echo "<td>direccion</td>";
-                      echo "<td>perfil</td>";
-                      echo "<td>activo</td>";
-                      echo "<td>foto</td>";
-                      echo '<th >'
-                        . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button>'
-                              . '</th>';
-                     echo "</tr>";
-                    }
-                      
+                          }
+                          
                       ?>
-                    
                   </tbody>
+                  </tfoot>
                 </table>
               </div>
             </div>
@@ -104,11 +124,11 @@
         </div>
         <div class="modal-body">
           <div class="text-center">
-            <img src="..." class="rounded" alt="...">
+          <!--   <img src="..." class="rounded" alt="...">-->
           </div>
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'usuario_nombre . usuario_apellido'</h1>
+                  <h1 class="h4 text-gray-900 mb-4"><?php echo $row->usuario_nombre," ",$row->usuario_apellido; ?></h1>
                 </div>
                 <form class="userEdit">
                 <div class="form-group row">
@@ -183,43 +203,43 @@
         </div>
         <div class="modal-body">
           <div class="p-5">
-            <!-- Por defecto el perfil es usuario y el estado es 1-->
-                <form class="userAdd">
+            <!-- Por defecto el perfil es "3" usuario y el estado es "1" activo-->
+                <form id="form_registrar" class="user">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="agregar_nombre" name="nombre" placeholder="Nombre">
+                      <input type="text" class="form-control form-control-user" id="usuario_nombre" name="usuario_nombre" placeholder="Nombre">
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="agregar_apellido" name="apellido" placeholder="Apellido">
+                      <input type="text" class="form-control form-control-user" id="usuario_apellido" name="usuario_apellido" placeholder="Apellido">
                     </div>
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="agregar_rut" name="rut" placeholder="RUT">
+                      <input type="text" class="form-control form-control-user" id="usuario_rut" name="usuario_rut" placeholder="RUT">
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="agregar_telefono" name="telefono" placeholder="Telefono">
+                      <input type="text" class="form-control form-control-user" id="usuario_telefono" name="usuario_telefono" placeholder="Telefono">
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="agregar_direccion" name="direccion" placeholder="Direccion">
+                    <input type="text" class="form-control form-control-user" id="usuario_direccion" name="usuario_direccion" placeholder="Direccion">
                   </div>
                   <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="agregar_correo" name="email" placeholder="Correo">
+                    <input type="email" class="form-control form-control-user" id="usuario_email" name="usuario_email" placeholder="Correo">
                   </div>
                   <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="agregar_contraseña" placeholder="Contraseña">
+                    <input type="password" class="form-control form-control-user" id="usuario_password" name="usuario_password" placeholder="Contraseña">
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="agregar_contraseña2" placeholder="Repetir contraseña">
+                    <input type="password" class="form-control form-control-user" id="usuario_password2" name="usuario_password2" placeholder="Repetir contraseña">
                   </div>
                 </div>
                     <div class="file-field input-field form-group mt-4 file-path-wrapper ">
-                      <input type="file" class="form-control-file file-path validate" id="agregar_foto" name="foto" accept="image/*">
+                      <input type="file" class="form-control-file file-path validate" id="usuario_foto" name="usuario_foto" accept="image/*">
                     </div>
                   </div>
-                  <button id="bt_editar" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                  <button id="bt_registrar" class="btn btn-primary btn-user btn-block">Agregar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

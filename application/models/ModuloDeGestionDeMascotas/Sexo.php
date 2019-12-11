@@ -9,9 +9,9 @@ class Sexo extends CI_Model {
      * sexo_descripcion
      */
     public function insertarSexo($sexo_nombre, $sexo_descripcion){
-        $data = array("sexo_nombre"   =>$sexo_nombre,
+      $data = array("sexo_nombre"   =>$sexo_nombre,
                     "sexo_descripcion"   =>$sexo_descripcion);      
-		return $this->db->insert("sexos",$data);
+		  return $this->db->insert("sexos",$data);
     }
     
     /**
@@ -22,10 +22,10 @@ class Sexo extends CI_Model {
      * sexo_descripcion: elemento a modificar
      */
     public function editarSexo($sexo_id, $sexo_nombre, $sexo_descripcion){
-        $this->db->where("sexo_id", $sexo_id);
-		$data = array("sexo_nombre"   =>$sexo_nombre,
+      $this->db->where("sexo_id", $sexo_id);
+		  $data = array("sexo_nombre"   =>$sexo_nombre,
                     "sexo_descripcion"   =>$sexo_descripcion);      
-		return $this->db->update("sexos",$data);
+		  return $this->db->update("sexos",$data);
 	}
     
     /**
@@ -34,14 +34,14 @@ class Sexo extends CI_Model {
      * sexo_id
      */
     public function eliminarSexo($sexo_id){
-		$this->db->where("sexo_id", $sexo_id);
-		return $this->db->delete("sexos");
+		  $this->db->where("sexo_id", $sexo_id);
+		  return $this->db->delete("sexos");
     }
 
     /**
      * Metodo que devuelve todos los Sexos de la bd
      */
-	public function Sexos(){
-		return $this->db->get("sexos")->result();
-	}
+	  public function sexos(){
+		  return $this->db->get("sexos");
+	  }
 }

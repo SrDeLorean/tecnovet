@@ -60,33 +60,33 @@
             <th>Acción</th>
           </tr>
         </tfoot>
-        <tbody>
-            <?php
-            for ($i = 1; $i <= 20; $i++) {
-            echo"<tr>" ;
-            echo "<td>$i</td>";
-            echo "<td>nombre dueño</td>";
-            echo "<td>nombre mascota</td>";
-            echo "<td>codigo chip</td>";
-            echo "<td>especie</td>";
-            echo "<td>raza</td>";
-            echo "<td>caracter</td>";
-            echo "<td>sexo</td>";
-            echo "<td>nacimiento</td>";
-            echo "<td>color</td>";
-            echo "<td>estado</td>";
-            echo "<td>esterilizacion</td>";
-            echo "<td>inscripción</td>";
-            echo "<td>foto</td>";
-            echo '<th >'
-              . '<button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit"></i></button>'
-                    . '</th>';
-           echo "</tr>";
-          }
-            
-            ?>
-          
-        </tbody>
+        <tbody >
+                    <?php
+
+                        foreach($mascotas->result() as $row){
+                    ?>
+                      <tr>
+                          <td> <?php echo $row->mascota_id; ?></td>
+                          <td> <?php echo $row->mascota_usuario; ?></td>
+                          <td> <?php echo $row->mascota_nombre; ?></td>
+                          <td> <?php echo $row->mascota_microchip; ?></td>
+                          <td> <?php echo $row->mascota_especie; ?></td>
+                          <td> <?php echo $row->mascota_raza; ?></td>
+                          <td> <?php echo $row->mascota_caracter; ?></td>
+                          <td> <?php echo $row->mascota_sexo; ?></td>
+                          <td> <?php echo $row->mascota_fechaNacimiento; ?></td>
+                          <td> <?php echo $row->mascota_color; ?></td>
+                          <td> <?php echo $row->mascota_estado; ?></td>
+                          <td> <?php echo $row->mascota_esterilizacion; ?></td>
+                          <td> <?php echo $row->mascota_creacion; ?></td>
+                          <td> <?php echo $row->mascota_foto; ?></td>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                      </tr>
+                      <?php
+                          }
+                          
+                      ?>
+                  </tbody>
       </table>
     </div>
   </div>
@@ -116,10 +116,10 @@
                 <form class="mascotaAdd">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="agregar_usuario" name="usuario" placeholder="RUT Dueño">
+                      <input type="text" class="form-control form-control-user" id="mascota_usuario" name="mascota_usuario" placeholder="RUT Dueño">
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="agregar_nombre" name="nombre" placeholder="Nombre">
+                      <input type="text" class="form-control form-control-user" id="mascota_nombre" name="mascota_nombre" placeholder="Nombre">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -159,10 +159,10 @@
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="date" class="form-control form-control-user" id="agregar_nacimiento" name="nacimiento" placeholder="Fecha Nacimiento">
+                      <input type="date" class="form-control form-control-user" id="mascota_fechaNacimiento" name="mascota_fechaNacimiento" placeholder="Fecha Nacimiento">
                     </div>
                     <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="agregar_color" name="color" placeholder="Color">
+                      <input type="text" class="form-control form-control-user" id="mascota_color" name="mascota_color" placeholder="Color">
                     </div>
                   </div>
                   <div class="form-group row">
@@ -183,7 +183,7 @@
                     </div>
                   <!-- La fecha de inscripcion es la cual se crea y la modificiacion es cuando se actualiza-->
                     <div class="file-field input-field form-group mt-4 file-path-wrapper ">
-                      <input type="file" class="form-control-file file-path validate" id="agregar_foto" name="foto" accept="image/*">
+                      <input type="file" class="form-control-file file-path validate" id="mascota_foto" name="mascota_foto" accept="image/*">
                     </div>
                   </div>
                   <button id="bt_admin_masc_add" class="btn btn-primary btn-user btn-block">Agregar</button>                
@@ -210,7 +210,7 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-                <form class="mascotaAdd">
+                <form id="form_registrar" class="mascotaAdd">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                       <input type="text" class="form-control form-control-user" id="agregar_usuario" name="usuario" placeholder="RUT Dueño">

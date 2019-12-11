@@ -9,9 +9,9 @@ class Estado extends CI_Model {
      * estado_descripcion
      */
     public function insertarEstado($estado_nombre, $estado_descripcion){
-        $data = array("estado_nombre"   =>$estado_nombre,
-                    "estado_descripcion"   =>$estado_descripcion);      
-		return $this->db->insert("estados",$data);
+      $data = array("estado_nombre"   =>$estado_nombre,
+                  "estado_descripcion"   =>$estado_descripcion);      
+		  return $this->db->insert("estados",$data);
     }
     
     /**
@@ -41,7 +41,7 @@ class Estado extends CI_Model {
     /**
      * Metodo que devuelve todos los estados de la bd
      */
-	public function Estados(){
-		return $this->db->get("estados")->result();
+	public function estados(){
+		return $this->db->get("estados");
 	}
 }
