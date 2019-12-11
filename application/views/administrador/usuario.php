@@ -204,7 +204,7 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-                <form id="form_registrar" class="user">
+                <form id="form_registrar_usuario" class="user">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                       <input type="text" class="form-control form-control-user" id="usuario_nombre" name="usuario_nombre" placeholder="Nombre">
@@ -239,7 +239,7 @@
                       <input type="file" class="form-control-file file-path validate" id="usuario_foto" name="usuario_foto" accept="image/*">
                     </div>
                   </div>
-                  <button id="bt_registrar_administrador" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                  <button id="bt_registrar_usuario" class="btn btn-primary btn-user btn-block">Agregar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

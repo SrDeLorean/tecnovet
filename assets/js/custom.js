@@ -59,9 +59,9 @@ $( document ).ready(function() {
         });
     });
 
-    $("#bt_registrar_administrador").click(function(e){
+    $("#bt_registrar_usuario").click(function(e){
         e.preventDefault();
-        var form = $("#form_registrar")[0];
+        var form = $("#form_registrar_usuario")[0];
         var data = new FormData(form);
         $.ajax({
             url:base_url+'crearUsuarioAdministrador',
@@ -180,6 +180,29 @@ $( document ).ready(function() {
         var data = new FormData(form);
         $.ajax({
             url:base_url+'crearSexo',
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success:function(o){
+                alert("Registrado");
+            },
+            error:function(){
+                alert("Error 500");
+            }
+        });
+    });
+
+    $("#bt_especie_agregar").click(function(e){
+        e.preventDefault();
+        var form = $("#form_registrar_especie")[0];
+        var data = new FormData(form);
+        $.ajax({
+            url:base_url+'crearEspecie',
             type: 'POST',
             dataType: 'json',
             data: data,
