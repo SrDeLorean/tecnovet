@@ -21,9 +21,9 @@ class Welcome extends CI_Controller {
 
 	//Nota: cabe destacar que el email se refiere al tipo del usuario dado que no tengo otro atributo para guardarlo, esto se va a ocupar posiblemente mas adelante
 	public function login(){
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-		$arrayUser = $this->usuario->login($email, md5($password));
+		$email 		= $this->input->post('email');
+		$password 	= $this->input->post('password');
+		$arrayUser 	= $this->usuario->login($email, md5($password));
 		if(count($arrayUser)> 0){
 			if($arrayUser[0]->usuario_perfil == 1) {
 				$this->session->set_userdata('administrador',$arrayUser);

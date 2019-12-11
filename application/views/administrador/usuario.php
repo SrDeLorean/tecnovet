@@ -34,7 +34,7 @@
                       <th>Apellido</th>
                       <th>Correo</th>
                       <th>Telefono</th>
-                      <th>Direccion</th>
+                      <th>Dirección</th>
                       <th>Perfil</th>
                       <th>Estado</th>
                       <th>Foto</th>
@@ -50,7 +50,7 @@
                       <th>Apellido</th>
                       <th>Correo</th>
                       <th>Telefono</th>
-                      <th>Direccion</th>
+                      <th>Dirección</th>
                       <th>Perfil</th>
                       <th>Estado</th>
                       <th>Foto</th>
@@ -58,7 +58,6 @@
                     </tr>
                     <tbody >
                     <?php
-
                         foreach($usuarios->result() as $row){
                     ?>
                       <tr>
