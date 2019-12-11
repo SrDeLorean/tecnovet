@@ -158,24 +158,30 @@ class Administrador extends CI_Controller {
     }
 
     /**
-     * Modulo de gestion de usuario
+     * 
      */
     public function crearUsuario(){
-        if($this->session->userdata("administrador")){
-            $usuario_rut= $this->input->post("usuario_rut");
-            $usuario_nombre= $this->input->post("usuario_nombre");
-            $usuario_apellido= $this->input->post("usuario_apellido");
-            $usuario_direccion= $this->input->post("usuario_direccion");
-            $usuario_email= $this->input->post("usuario_email");
-            $usuario_telefono= $this->input->post("usuario_telefono");
-            $usuario_perfil= $this->input->post("usuario_perfil");
-            $usuario_estado= $this->input->post("usuario_estado");
-            $usuario_password= $this->input->post("usuario_password");
-            $usuario_foto= $this->input->post("usuario_foto");
-            $this->usuario->crearUsuario($usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto);
-            echo json_encode(array("msg"=>"Perfil creado"));
-        }
-    }
+		$usuario_rut		= $this->input->post("usuario_rut");
+		$usuario_nombre 	= $this->input->post("usuario_nombre");
+		$usuario_apellido	= $this->input->post("usuario_apellido");
+		$usuario_direccion	= $this->input->post("usuario_direccion");
+		$usuario_email 		= $this->input->post("usuario_email");
+		$usuario_telefono	= $this->input->post("usuario_telefono");
+		$usuario_password	= $this->input->post("usuario_password");
+		$usuario_perfil = '3';
+		$usuario_estado = '1';
+        //---------------Esto da ERROR no reconoce laubicacion "foto" por lo que considera que no hay imagen-----------------
+		$path 		= $_FILES["usuario_foto"]["tmp_name"];
+		$usuario_foto= '';
+		if(is_uploaded_file($path) && !empty($_FILES)){
+			$usuario_foto = file_get_contents($path);
+		}
+		if ($this->usuario->insertarUsuario($usuario_rut,$usuario_nombre,$usuario_apellido,$usuario_direccion,$usuario_email,$usuario_telefono ,$usuario_perfil, $usuario_estado,md5($usuario_password),$usuario_foto)){
+			echo json_encode(array('msg'=>"Usuario registrado"));
+		}else{
+			echo json_encode(array('msg'=>"Error 500"));
+		}
+	}
 
     public function editarUsuario(){
         if($this->session->userdata("administrador")){
@@ -191,7 +197,7 @@ class Administrador extends CI_Controller {
             $usuario_password= $this->input->post("usuario_password");
             $usuario_foto= $this->input->post("usuario_foto");
             $this->usuario->editarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto);
-            echo json_encode(array("msg"=>"Perfil actualizado"));
+            echo json_encode(array("msg"=>"Usuario actualizado"));
         }
     }
 
@@ -199,13 +205,100 @@ class Administrador extends CI_Controller {
         if($this->session->userdata("administrador")){
             $usuario_id= $this->input->post("usuario_id");
             $this->usuario->eliminarUsuario($usuario_id);
-            echo json_encode(array("msg"=>"Perfil eliminado"));
+            echo json_encode(array("msg"=>"Usuario eliminado"));
         }
     }
 
     public function usuarios(){
         if($this->session->userdata("administrador")){
             echo json_encode($this->usuario->usuarios());
+        }
+    }
+
+    /**
+     * 
+     */
+    public function crearMascota(){
+        if($this->session->userdata("administrador")){
+            $mascota_usuario = $this->input->post("mascota_usuario");
+            $mascota_nombre = $this->input->post("mascota_nombre");
+            $mascota_especie = $this->input->post("mascota_especie");
+            $mascota_raza = $this->input->post("mascota_raza");
+            $mascota_sexo = $this->input->post("mascota_sexo");
+            $mascota_fechaNacimiento = $this->input->post("mascota_fechaNacimiento");
+            $mascota_color = $this->input->post("mascota_color");
+            $mascota_microchip = $this->input->post("mascota_microchip");
+            $mascota_foto = $this->input->post("mascota_foto");
+            $mascota_caracter = $this->input->post("mascota_caracter");
+            $mascota_estado = $this->input->post("mascota_estado");
+            $mascota_esterilizacion = $this->input->post("mascota_esterilizacion");
+            $mascota_creacion = $this->input->post("mascota_creacion");
+            $mascota_actualizacion = $this->input->post("mascota_actualizacion");
+            if ($this->mascota->insertarMascota($mascota_usuario, $mascota_nombre, $mascota_especie, $mascota_raza, $mascota_sexo, $mascota_fechaNacimiento, $mascota_color, $mascota_microchip, $mascota_foto, $mascota_caracter, $mascota_estado, $mascota_esterilizacion, $mascota_creacion, $mascota_actualizacion)){
+                echo json_encode(array('msg'=>"Perfil registrado"));
+            }else{
+                echo json_encode(array('msg'=>"Error 500"));
+            }
+        }
+    }
+
+    /**
+     * 
+     */
+    public function crearPerfil(){
+        if($this->session->userdata("administrador")){
+            $perfil_nombre = $this->input->post("perfil_nombre");
+            $perfil_descripcion = $this->input->post("perfil_descripcion");
+            if ($this->perfil->insertarPerfil($perfil_nombre,$perfil_descripcion)){
+                echo json_encode(array('msg'=>"Perfil registrado"));
+            }else{
+                echo json_encode(array('msg'=>"Error 500"));
+            }
+        }
+    }
+
+    /**
+     * 
+     */ 
+    public function crearEstado(){
+        if($this->session->userdata("administrador")){
+            $estado_nombre = $this->input->post("estado_nombre");
+            $estado_descripcion = $this->input->post("estado_descripcion");
+            if ($this->estado->insertarEstado($estado_nombre,$estado_descripcion)){
+                echo json_encode(array('msg'=>"estado registrado"));
+            }else{
+                echo json_encode(array('msg'=>"Error 500"));
+            }
+        }
+    }
+
+    /**
+     * 
+     */ 
+    public function crearCaracter(){
+        if($this->session->userdata("administrador")){
+            $caracter_nombre = $this->input->post("caracter_nombre");
+            $caracter_descripcion = $this->input->post("caracter_descripcion");
+            if ($this->caracter->insertarCaracter($caracter_nombre,$caracter_descripcion)){
+                echo json_encode(array('msg'=>"estado registrado"));
+            }else{
+                echo json_encode(array('msg'=>"Error 500"));
+            }
+        }
+    }
+
+    /**
+     * 
+     */ 
+    public function crearSexo(){
+        if($this->session->userdata("administrador")){
+            $sexo_nombre = $this->input->post("sexo_nombre");
+            $sexo_descripcion = $this->input->post("sexo_descripcion");
+            if ($this->sexo->insertarSexo($sexo_nombre,$sexo_descripcion)){
+                echo json_encode(array('msg'=>"Sexo registrado"));
+            }else{
+                echo json_encode(array('msg'=>"Error 500"));
+            }
         }
     }
 
