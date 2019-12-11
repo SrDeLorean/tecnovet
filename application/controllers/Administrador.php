@@ -84,6 +84,11 @@ class Administrador extends CI_Controller {
             $this->load->view('administrador/templateAdmin/header');
             $this->load->database();
             $data["mascotas"] = $this->mascota->mascotas();
+            $data["especies"] = $this->especie->especies();
+            $data["razas"] = $this->raza->razas();
+            $data["caracteres"] = $this->caracter->caracteres();
+            $data["sexos"] = $this->sexo->sexos();
+            $data["estados"] = $this->estado->estados();
             $this->load->view('administrador/mascota', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{
