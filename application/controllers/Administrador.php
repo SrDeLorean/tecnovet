@@ -160,22 +160,7 @@ class Administrador extends CI_Controller {
     /**
      * Modulo de gestion de usuario
      */
-    public function crearUsuario(){
-        if($this->session->userdata("administrador")){
-            $usuario_rut= $this->input->post("usuario_rut");
-            $usuario_nombre= $this->input->post("usuario_nombre");
-            $usuario_apellido= $this->input->post("usuario_apellido");
-            $usuario_direccion= $this->input->post("usuario_direccion");
-            $usuario_email= $this->input->post("usuario_email");
-            $usuario_telefono= $this->input->post("usuario_telefono");
-            $usuario_perfil= $this->input->post("usuario_perfil");
-            $usuario_estado= $this->input->post("usuario_estado");
-            $usuario_password= $this->input->post("usuario_password");
-            $usuario_foto= $this->input->post("usuario_foto");
-            $this->usuario->crearUsuario($usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto);
-            echo json_encode(array("msg"=>"Perfil creado"));
-        }
-    }
+    
 
     public function editarUsuario(){
         if($this->session->userdata("administrador")){

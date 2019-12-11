@@ -34,7 +34,7 @@
                       <th>Apellido</th>
                       <th>Correo</th>
                       <th>Telefono</th>
-                      <th>Direccion</th>
+                      <th>Dirección</th>
                       <th>Perfil</th>
                       <th>Estado</th>
                       <th>Foto</th>
@@ -50,7 +50,7 @@
                       <th>Apellido</th>
                       <th>Correo</th>
                       <th>Telefono</th>
-                      <th>Direccion</th>
+                      <th>Dirección</th>
                       <th>Perfil</th>
                       <th>Estado</th>
                       <th>Foto</th>
@@ -58,7 +58,6 @@
                     </tr>
                     <tbody >
                     <?php
-
                         foreach($usuarios->result() as $row){
                     ?>
                       <tr>
@@ -205,7 +204,7 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-                <form class="userAdd">
+                <form class="userAdd" id="Form_registrarUsuario" enctype="multipart/form-data">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                       <input type="text" class="form-control form-control-user" id="agregar_nombre" name="nombre" placeholder="Nombre">
@@ -223,7 +222,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="agregar_direccion" name="direccion" placeholder="Direccion">
+                    <input type="text" class="form-control form-control-user" id="agregar_direccion" name="direccion" placeholder="Dirección">
                   </div>
                   <div class="form-group">
                     <input type="email" class="form-control form-control-user" id="agregar_correo" name="email" placeholder="Correo">
@@ -240,7 +239,7 @@
                       <input type="file" class="form-control-file file-path validate" id="agregar_foto" name="foto" accept="image/*">
                     </div>
                   </div>
-                  <button id="bt_registrar" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                  <button id="bt_registrarUsuario" class="btn btn-primary btn-user btn-block">Agregar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

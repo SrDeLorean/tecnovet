@@ -21,9 +21,9 @@ class Welcome extends CI_Controller {
 
 	//Nota: cabe destacar que el email se refiere al tipo del usuario dado que no tengo otro atributo para guardarlo, esto se va a ocupar posiblemente mas adelante
 	public function login(){
-		$email = $this->input->post('email');
-		$password = $this->input->post('password');
-		$arrayUser = $this->usuario->login($email, md5($password));
+		$email 		= $this->input->post('email');
+		$password 	= $this->input->post('password');
+		$arrayUser 	= $this->usuario->login($email, md5($password));
 		if(count($arrayUser)> 0){
 			if($arrayUser[0]->usuario_perfil == 1) {
 				$this->session->set_userdata('administrador',$arrayUser);
@@ -54,13 +54,13 @@ class Welcome extends CI_Controller {
 		$direccion	= $this->input->post("direccion");
 		$email 		= $this->input->post("email");
 		$telefono	= $this->input->post("telefono");
+		$perfil		= 3;
+		$estado		= 1;
 		$password	= $this->input->post("password");
-//---------------Esto da ERROR no reconoce laubicacion "foto" por lo que considera que no hay imagen-----------------
 		$path 		= $_FILES["foto"]["tmp_name"];
-
-		if(is_uploaded_file($path) && !empty($_FILES)){
+		if(is_uploaded_file($path)){
 			$foto = file_get_contents($path);
-			if ($this->usuario->insertarUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,md5($password),$foto)){
+			if ($this->usuario->insertarUsuario($rut,$nombre,$apellido,$direccion,$email,$telefono,$perfil,$estado,md5($password),$foto)){
 				echo json_encode(array('msg'=>"Registrado"));
 			}else{
 				echo json_encode(array('msg'=>"Error 500"));
