@@ -55,11 +55,10 @@ class Welcome extends CI_Controller {
 		$usuario_email 		= $this->input->post("usuario_email");
 		$usuario_telefono	= $this->input->post("usuario_telefono");
 		$usuario_password	= $this->input->post("usuario_password");
-		$usuario_perfil = '3';
-		$usuario_estado = '1';
-//---------------Esto da ERROR no reconoce laubicacion "foto" por lo que considera que no hay imagen-----------------
+		$usuario_perfil 	= '3';
+		$usuario_estado 	= '1';
+		$usuario_foto		= ' '; // --- reemplazar por foto por default
 		$path 		= $_FILES["usuario_foto"]["tmp_name"];
-		$usuario_foto= '';
 		if(is_uploaded_file($path) && !empty($_FILES)){
 			$usuario_foto = file_get_contents($path);
 		}

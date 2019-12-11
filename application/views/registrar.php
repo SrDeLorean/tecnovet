@@ -49,7 +49,6 @@
                 </div>
                 <button id="bt_registrar" class="btn btn-primary btn-user btn-block">Registrarse</button>
                 <hr>
-                
               </form>
               <hr>
               <div class="text-center">
