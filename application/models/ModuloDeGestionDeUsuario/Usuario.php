@@ -28,17 +28,18 @@ class Usuario extends CI_Model {
 	 * usuario_password
 	 * usuario_foto
 	 */
-	public function insertarUsuario($usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
-		$data = array("usuario_rut" =>$this->input->post('$usuario_rut'),
-				"usuario_nombre"  	=>$this->input->post('$usuario_nombre'),
-				"usuario_apellido"	=>$this->input->post('$usuario_apellido'),
-				"usuario_direccion"	=>$this->input->post('$usuario_direccion'),
-				"usuario_email"   	=>$this->input->post('$usuario_email'),
-				"usuario_telefono"	=>$this->input->post('$usuario_telefono'),
-				"usuario_perfil"  	=>$this->input->post('$usuario_perfil'),
-				"usuario_estado"  	=>$this->input->post('$usuario_estado'),
-				"usuario_password"	=>$this->input->post('$usuario_password'),
-				"usuario_foto"    	=>$this->input->post('$usuario_foto'));
+	public function insertarUsuario($usuario_rut,$usuario_nombre,$usuario_apellido,$usuario_direccion,$usuario_email,$usuario_telefono ,$usuario_perfil, $usuario_estado,$usuario_password,$usuario_foto){	
+		$data = array("usuario_rut" =>$usuario_rut,
+				"usuario_nombre"  	=>$usuario_nombre,
+				"usuario_apellido"	=>$usuario_apellido,
+				"usuario_direccion"	=>$usuario_direccion,
+				"usuario_email"   	=>$usuario_email,
+				"usuario_telefono"	=>$usuario_telefono,
+				"usuario_perfil"  	=>$usuario_perfil,
+				"usuario_estado"  	=>$usuario_estado,
+				"usuario_password"	=>$usuario_password,
+				"usuario_foto"    	=>$usuario_foto);
+
 		return $this->db->insert("usuarios",$data); 
 	}
     
