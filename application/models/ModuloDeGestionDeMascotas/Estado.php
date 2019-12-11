@@ -9,9 +9,9 @@ class Estado extends CI_Model {
      * estado_descripcion
      */
     public function insertarEstado($estado_nombre, $estado_descripcion){
-        $data = array("estado_nombre"   =>$estado_nombre,
-                    "estado_descripcion"   =>$estado_descripcion);      
-		return $this->db->insert("estados",$data);
+      $data = array("estado_nombre"   =>$estado_nombre,
+                  "estado_descripcion"   =>$estado_descripcion);      
+		  return $this->db->insert("estados",$data);
     }
     
     /**

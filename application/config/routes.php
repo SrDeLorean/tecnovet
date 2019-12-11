@@ -73,12 +73,15 @@ $route['raza'] = 'administrador/raza';
 $route['ficha'] = 'administrador/ficha';
 
 //Modulo de gestion de usuario
-//$route['crearUsuario'] = 'administrador/crearUsuario';
+$route['crearUsuarioAdministrador'] = 'administrador/crearUsuario';
 $route['editarUsuario'] = 'administrador/editarUsuario';
 $route['eliminarUsuario'] = 'administrador/eliminarUsuario';
 $route['usuarios'] = 'administrador/usuarios';
-
-
+$route['crearPerfil'] = 'administrador/crearPerfil';
+$route['crearMascota'] = 'administrador/crearMascota';
+$route['crearEstado'] = 'administrador/crearEstado';
+$route['crearCaracter'] = 'administrador/crearCaracter';
+$route['crearSexo'] = 'administrador/crearSexo';
 
 //Menu de interfaces para el Veterinario
 

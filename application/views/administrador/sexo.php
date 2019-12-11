@@ -119,7 +119,7 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-            <form class="sexoAgregar">    
+            <form id="form_registrar_sexo" class="sexoAgregar">    
               <div class="form-group">
                 <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
               </div>

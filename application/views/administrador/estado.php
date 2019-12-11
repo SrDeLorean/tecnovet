@@ -84,16 +84,16 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">'estado_nombre'</h1>
                 </div>
-                <form class="perfil">
+                <form id="form_registrar_editar" class="perfil">
     
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control form-control-user" id="estado_nombre_editar" name="estado_nombre_editar" placeholder="Nombre">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control form-control-user" id="estado_descripcion_editar" name="estado_descripcion_editar" placeholder="Descripcion">
                   </div>
                   
-                  <button id="bt_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_estado" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">
@@ -111,7 +111,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalAdd">Agregar Perfil <i class="fas fa-plus"></i></h5>
+          <h5 class="modal-title" id="modalAdd">Agregar Estado <i class="fas fa-plus"></i></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -119,15 +119,14 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-            <form class="perfilAdd">    
+            <form id="form_registrar" class="perfilAdd">    
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
+                <input type="text" class="form-control form-control-user" id="estado_nombre" name="estado_nombre" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control form-control-user" id="estado_descripcion" name="estado_descripcion" placeholder="Descripcion">
               </div>
-              
-              <button id="bt_editar" class="btn btn-primary btn-user btn-block">Agregar</button>                
+              <button id="bt_agregar_estado" class="btn btn-primary btn-user btn-block">Agregar</button>                
             </form>               
         </div>
         <div class="modal-footer">

@@ -119,15 +119,15 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-            <form class="perfilAdd">    
+            <form id="form_registrar_caracter" class="perfilAdd">    
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
+                <input type="text" class="form-control form-control-user" id="caracter_nombre" name="caracter_nombre" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control form-control-user" id="caracter_descripcion" name="caracter_descripcion" placeholder="Descripcion">
               </div>
               
-              <button id="bt_caracter_editar" class="btn btn-primary btn-user btn-block">Agregar</button>                
+              <button id="bt_caracter_crear" class="btn btn-primary btn-user btn-block">Agregar</button>                
             </form>               
         </div>
         <div class="modal-footer">
