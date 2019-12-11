@@ -91,7 +91,7 @@
                           
                           ?></td>
                           <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->usuario_foto) .'"class="img-fluid img-responsive " width="200" height="200"/>'; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1" href="#" role="button" data-toggle="modal" data-target="#modalEdit" value="<?php $row->usuario_id ?>"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
@@ -128,7 +128,7 @@
           </div>
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'usuario_nombre . usuario_apellido'</h1>
+                  <h1 class="h4 text-gray-900 mb-4"><?php echo $row->usuario_nombre," ",$row->usuario_apellido; ?></h1>
                 </div>
                 <form class="userEdit">
                 <div class="form-group row">
@@ -203,7 +203,7 @@
         </div>
         <div class="modal-body">
           <div class="p-5">
-            <!-- Por defecto el perfil es usuario y el estado es 1-->
+            <!-- Por defecto el perfil es "3" usuario y el estado es "1" activo-->
                 <form id="form_registrar" class="user">
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -239,7 +239,7 @@
                       <input type="file" class="form-control-file file-path validate" id="usuario_foto" name="usuario_foto" accept="image/*">
                     </div>
                   </div>
-                  <button id="bt_registrar_administrador" class="btn btn-primary btn-user btn-block">Agregar</button>                
+                  <button id="bt_registrar" class="btn btn-primary btn-user btn-block">Agregar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

@@ -59,29 +59,6 @@ $( document ).ready(function() {
         });
     });
 
-    $("#bt_registrar_administrador").click(function(e){
-        e.preventDefault();
-        var form = $("#form_registrar")[0];
-        var data = new FormData(form);
-        $.ajax({
-            url:base_url+'crearUsuarioAdministrador',
-            type: 'POST',
-            dataType: 'json',
-            data: data,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            cache: false,
-            timeout: 600000,
-            success:function(o){
-                alert("Registrado");
-            },
-            error:function(){
-                alert("Error 500");
-            }
-        });
-    });
-
     $("#bt_perfil_agregar").click(function(e){
         e.preventDefault();
         var form = $("#form_registrar")[0];
