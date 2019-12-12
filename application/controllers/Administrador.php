@@ -186,7 +186,7 @@ class Administrador extends CI_Controller {
     public function editarUsuario(){
         if($this->session->userdata("administrador")){
             $usuario_id         = $this->input->post("editar_id");
-            echo $usuario_rut        = $this->input->post("editar_rut");
+            $usuario_rut        = $this->input->post("editar_rut");
             $usuario_nombre     = $this->input->post("editar_nombre");
             $usuario_apellido   = $this->input->post("editar_apellido");
             $usuario_direccion  = $this->input->post("editar_direccion");
