@@ -61,7 +61,7 @@
                         foreach($usuarios->result() as $row){
                     ?>
                       <tr>
-                          <td> <?php echo $row->usuario_id; ?></td>
+                          <td id="id" value="<?php echo $row->usuario_id; ?>"> <?php echo $row->usuario_id; ?></td>
                           <td> <?php echo $row->usuario_rut; ?></td>
                           <td> <?php echo $row->usuario_nombre; ?></td>
                           <td> <?php echo $row->usuario_apellido; ?></td>
@@ -91,7 +91,7 @@
                           
                           ?></td>
                           <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->usuario_foto) .'"class="img-fluid img-responsive " width="200" height="200"/>'; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1" href="#" role="button" data-toggle="modal" data-target="#modalEdit" value="<?php $row->usuario_id ?>"><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 userEditBtn" href="#" role="button" data-toggle="modal" data-target="#modalEdit" value= ""><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
@@ -112,7 +112,7 @@
 
 <!-- CRUD MODAL editar Detalle Usuario  -->
 
-<!-- Modal editar User-->
+<!------------------------------- Modal editar User--------------------------------------------------------->
   <div class="modal fade bd-example-modal-lg" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -127,65 +127,67 @@
           <!--   <img src="..." class="rounded" alt="...">-->
           </div>
           <div class="p-5">
-                <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4"><?php echo $row->usuario_nombre," ",$row->usuario_apellido; ?></h1>
+            <div class="text-center">
+              <h1 class="h4 text-gray-900 mb-4"></h1>
+            </div>
+            <!-- inicio del formulario "form_editar"-->
+            <form id="form_editar" class="user" method="POST" enctype="multipart/form-data">
+              <div class="form-group row">
+                <input type="text" class="form-control form-control-user" id="editar_id" name="id" hidden="true">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
                 </div>
-                <form class="userEdit">
-                <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="editar_apellido" name="apellido" placeholder="Apellido">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="editar_rut" name="rut" placeholder="RUT">
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="editar_telefono" name="telefono" placeholder="Telefono">
-                    </div>
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_direccion" name="direccion" placeholder="Direccion">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control form-control-user" id="editar_correo" name="email" placeholder="Correo">
-                  </div>
-                  <div class="form-group">
-                    <input type="password" class="form-control form-control-user" id="editar_contraseña" name="contraseña" placeholder="Contraseña">
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Perfil</label>
-                      <select class="custom-select my-1 mr-sm-2" id="editar_perfil">
-                        <option selected>Perfil Actual</option>
-                        <option value="1">Administrador</option>
-                        <option value="2">Veterinario</option>
-                        <option value="3">Usuario</option>
-                      </select>
-                    </div>
-                    <div class="col-sm-6">                    
-                      <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Estado</label>
-                      <select class="custom-select my-1 mr-sm-2" id="editar_estado">
-                        <option selected>Estado Actual</option>
-                        <option value="1">Activo</option>
-                        <option value="0">Inactivo</option>
-                      </select>
-                    </div>
-                    <div class="file-field input-field form-group mt-4 file-path-wrapper ">
-                      <input type="file" class="form-control-file file-path validate" id="editar_foto" name="foto" accept="image/*">
-                    </div>
-                  </div>
-                  <button id="bt_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
-                </form>              
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control form-control-user" id="editar_apellido" name="apellido" placeholder="Apellido">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <input type="text" class="form-control form-control-user" id="editar_rut" name="rut" placeholder="RUT">
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control form-control-user" id="editar_telefono" name="telefono" placeholder="Telefono">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-user" id="editar_direccion" name="direccion" placeholder="Direccion">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control form-control-user email" id="editar_email" name="email" placeholder="Correo">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control form-control-user" id="editar_contraseña" name="contraseña" placeholder="Contraseña">
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Perfil</label>
+                  <select class="custom-select my-1 mr-sm-2" id="editar_perfil" name="perfil">
+                    <option value="" selected>Perfil Actual</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Veterinario</option>
+                    <option value="3">Usuario</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">                    
+                  <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Estado</label>
+                  <select class="custom-select my-1 mr-sm-2" id="editar_estado" name="estado">
+                    <option selected>Estado Actual</option>
+                    <option value="1">Activo</option>
+                    <option value="0">Inactivo</option>
+                  </select>
+                </div>
+                <div class="file-field input-field form-group mt-4 file-path-wrapper ">
+                  <input type="file" class="form-control-file file-path validate" id="editar_foto" name="foto" accept="image/*">
+                </div>
+              </div>
+              <button id="bt_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+            </form>              
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </div>
 

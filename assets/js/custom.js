@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     var base_url = "http://localhost/tecnovet/"
-//-------Login-------------
+ //-------Login-------------
     $("#bt_login").click(function(e){
         e.preventDefault();
         var email = $("#email").val();
@@ -35,7 +35,7 @@ $( document ).ready(function() {
             }
         });
     });
-
+ //-------------Registrar Usuarios
     $("#bt_registrar").click(function(e){
         e.preventDefault();
         var form = $("#form_registrar")[0];
@@ -58,7 +58,52 @@ $( document ).ready(function() {
             }
         });
     });
-
+ //------------------modal editar usuario Usuarios // Carga de datos al modal-------------
+    $(document).ready(function(){
+        $('.userEditBtn').on('click', function(){
+            $('#modalEdit').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+            //console.log(data);
+            $('#editar_id').val(data[0]);
+            $('#editar_nombre').val(data[2]);
+            $('#editar_apellido').val(data[3]);
+            $('#editar_rut').val(data[1]); 
+            $('#editar_telefono').val(data[5]);
+            $('#editar_direccion').val(data[6]);
+            $('#editar_email').val(data[4]);
+            $('#editar_contaseña').val(data[6]);
+            $('#editar_perfil').val(data[8]);
+            $('#editar_estado').val(data[9]);
+            $('#editar_foto').val(data[10]);
+        });
+    });
+ //----------------Modificar usuario--------------------------------
+    $("#bt_editar").click(function(e){
+        e.preventDefault();
+        var form = $("#form_editar")[0];
+        var data = new FormData(form);
+        $.ajax({
+            url:base_url+'editarUsuario',
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            enctype: 'multipart/form-data',
+            processData: false,
+            contentType: false,
+            cache: false,
+            timeout: 600000,
+            success:function(o){
+                alert(o.msg, "Usuario Editado");
+            },
+            error:function(){
+                alert("Error 500");
+            }
+        });
+    });
+//------------------Agregar Perfil------------------
     $("#bt_perfil_agregar").click(function(e){
         e.preventDefault();
         var form = $("#form_registrar")[0];
