@@ -63,21 +63,27 @@
         <tbody >
                     <?php
 
-                        foreach($mascotas->result() as $row){
+                        foreach($listaMascotas->result() as $row){
                     ?>
                       <tr>
                           <td> <?php echo $row->mascota_id; ?></td>
-                          <td> <?php echo $row->mascota_usuario; ?></td>
+                          <td> <?php echo $row->usuario_nombre; ?></td>
                           <td> <?php echo $row->mascota_nombre; ?></td>
                           <td> <?php echo $row->mascota_microchip; ?></td>
-                          <td> <?php echo $row->mascota_especie; ?></td>
-                          <td> <?php echo $row->mascota_raza; ?></td>
-                          <td> <?php echo $row->mascota_caracter; ?></td>
-                          <td> <?php echo $row->mascota_sexo; ?></td>
+                          <td> <?php echo $row->especie_nombre; ?></td>
+                          <td> <?php echo $row->raza_nombre; ?></td>
+                          <td> <?php echo $row->caracter_nombre; ?></td>
+                          <td> <?php echo $row->sexo_nombre; ?></td>
                           <td> <?php echo $row->mascota_fechaNacimiento; ?></td>
                           <td> <?php echo $row->mascota_color; ?></td>
-                          <td> <?php echo $row->mascota_estado; ?></td>
-                          <td> <?php echo $row->mascota_esterilizacion; ?></td>
+                          <td> <?php echo $row->estado_nombre; ?></td>
+                          <td> <?php 
+                          if($row->mascota_esterilizacion==1){
+                            echo 'si';
+                          }else{
+                            echo 'no';
+                          }
+                          ?></td>
                           <td> <?php echo $row->mascota_creacion; ?></td>
                           <td> <?php echo $row->mascota_foto; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
@@ -366,4 +372,50 @@
     </div>
   </div>
 
+  <script>
+$(document).ready(function(){
+ $('#country').change(function(){
+  var country_id = $('#country').val();
+  if(country_id != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>dynamic_dependent/fetch_state",
+    method:"POST",
+    data:{country_id:country_id},
+    success:function(data)
+    {
+     $('#state').html(data);
+     $('#city').html('<option value="">Select City</option>');
+    }
+   });
+  }
+  else
+  {
+   $('#state').html('<option value="">Select State</option>');
+   $('#city').html('<option value="">Select City</option>');
+  }
+ });
+
+ $('#state').change(function(){
+  var state_id = $('#state').val();
+  if(state_id != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>dynamic_dependent/fetch_city",
+    method:"POST",
+    data:{state_id:state_id},
+    success:function(data)
+    {
+     $('#city').html(data);
+    }
+   });
+  }
+  else
+  {
+   $('#city').html('<option value="">Select City</option>');
+  }
+ });
+ 
+});
+</script>
 
