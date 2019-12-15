@@ -91,5 +91,31 @@ class Mascota extends CI_Model {
      */
 	public function mascotas(){
 		return $this->db->get("mascotas");
-	}
+  }
+  
+  /**
+     * Metodo que devuelve todos los mascotas de la bd
+     * Los valores que retorna esta tabla son con los siguientes nombre:
+     * mascota_id
+     * usuario_nombre
+     * mascota_nombre
+     * especie_nombre
+     * raza_nombre
+     * sexo_nombre
+     * mascota_fechaNacimiento
+     * mascota_color
+     * mascota_microchip
+     * mascota_foto
+     * caracter_nombre
+     * estado_nombre
+     * mascota_esterilizacion
+     * mascota_creacion
+     * mascota_actualizacion
+     */
+	public function imprimirMascotas(){
+    $this->db->select("mascota_id, usuario_nombre, usuario_apellido , mascota_nombre, especie_nombre, raza_nombre, sexo_nombre, mascota_fechaNacimiento, mascota_color,mascota_microchip, mascota_foto,caracter_nombre, estado_nombre, mascota_esterilizacion, mascota_creacion, mascota_actualizacion");
+    $this->db->from("mascotas, usuarios, especies, razas, sexos, caracteres, estados");
+    $this->db->where("mascota_usuario=usuario_id AND mascota_especie=especie_id AND mascota_raza=raza_id AND mascota_sexo=sexo_id AND mascota_caracter=caracter_id AND mascota_estado=estado_id");
+    return $this->db->get();
+  }
 }

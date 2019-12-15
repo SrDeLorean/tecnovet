@@ -121,10 +121,10 @@
             <!-- Por defecto el perfil es usuario y el estado es 1-->
             <form id="form_registrar_sexo" class="sexoAgregar">    
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
+                <input type="text" class="form-control form-control-user" id="sexo_nombre" name="sexo_nombre" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control form-control-user" id="sexo_descripcion" name="sexo_descripcion" placeholder="Descripcion">
               </div>
               
               <button id="bt_sexo_agregar" class="btn btn-primary btn-user btn-block">Agregar</button>                

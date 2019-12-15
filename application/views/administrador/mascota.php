@@ -63,23 +63,29 @@
         <tbody >
                     <?php
 
-                        foreach($mascotas->result() as $row){
+                        foreach($listaMascotas->result() as $row){
                     ?>
                       <tr>
                           <td> <?php echo $row->mascota_id; ?></td>
-                          <td> <?php echo $row->mascota_usuario; ?></td>
+                          <td> <?php echo $row->usuario_nombre." ".$row->usuario_apellido; ?></td>
                           <td> <?php echo $row->mascota_nombre; ?></td>
                           <td> <?php echo $row->mascota_microchip; ?></td>
-                          <td> <?php echo $row->mascota_especie; ?></td>
-                          <td> <?php echo $row->mascota_raza; ?></td>
-                          <td> <?php echo $row->mascota_caracter; ?></td>
-                          <td> <?php echo $row->mascota_sexo; ?></td>
+                          <td> <?php echo $row->especie_nombre; ?></td>
+                          <td> <?php echo $row->raza_nombre; ?></td>
+                          <td> <?php echo $row->caracter_nombre; ?></td>
+                          <td> <?php echo $row->sexo_nombre; ?></td>
                           <td> <?php echo $row->mascota_fechaNacimiento; ?></td>
                           <td> <?php echo $row->mascota_color; ?></td>
-                          <td> <?php echo $row->mascota_estado; ?></td>
-                          <td> <?php echo $row->mascota_esterilizacion; ?></td>
+                          <td> <?php echo $row->estado_nombre; ?></td>
+                          <td> <?php 
+                          if($row->mascota_esterilizacion==1){
+                            echo 'si';
+                          }else{
+                            echo 'no';
+                          }
+                          ?></td>
                           <td> <?php echo $row->mascota_creacion; ?></td>
-                          <td> <?php echo $row->mascota_foto; ?></td>
+                          <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->mascota_foto) .'"class="img-fluid img-responsive " width="200" height="200"/>'; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
@@ -126,17 +132,31 @@
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control">
                       <option>Especie</option>
-                      <option value="1">Perro</option>
-                      <option value="2">Gato</option>
-                      <option value="3">Exotico</option>
+                      <?php
+                        $i = 1;
+                        foreach($especies->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->especie_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
                     <select class="form-control">
                       <option>Raza</option>
-                      <option value="1">Golden Retriever</option>
-                      <option value="2">Akita</option>
-                      <option value="3">Exotico</option>
+                      <?php
+                        $i = 1;
+                        foreach($razas->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->raza_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                   </div>
@@ -144,16 +164,31 @@
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control">
                       <option>Caracter</option>
-                      <option value="1">Agresivo</option>
-                      <option value="2">Docil</option>
-                      <option value="3">Tranquilo</option>
+                      <?php
+                        $i = 1;
+                        foreach($caracteres->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->caracter_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
                     <select class="form-control">
                       <option>Sexo</option>
-                      <option value="1">Macho</option>
-                      <option value="2">Hembra</option>
+                      <?php
+                        $i = 1;
+                        foreach($sexos->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->sexo_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                   </div>
@@ -169,9 +204,16 @@
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control">
                       <option>Estado</option>
-                      <option value="1">Sano</option>
-                      <option value="2">Post-Hoperatorio</option>
-                      <option value="3">Tratamiento</option>
+                      <?php
+                        $i = 1;
+                        foreach($estados->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->estado_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
@@ -222,18 +264,32 @@
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control">
-                      <option>Especie</option>
-                      <option value="1">Perro</option>
-                      <option value="2">Gato</option>
-                      <option value="3">Exotico</option>
+                    <option>Especie</option>
+                      <?php
+                        foreach($especies->result() as $row){
+                       ?>
+                        <option id='especie' value=<?php echo $row->especie_id ?>><?php echo $row->especie_nombre; ?></option>
+                      <?php
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
                     <select class="form-control">
-                      <option>Raza</option>
-                      <option value="1">Golden Retriever</option>
-                      <option value="2">Akita</option>
-                      <option value="3">Exotico</option>
+                    <option>Raza</option>
+                      <?php
+                        $i = 1;
+                        foreach($razas->result() as $row){
+                          if('especie'==$row->raza_especie){
+                            ?>
+                            <option value=<?php echo $i ?>><?php echo $row->raza_nombre; ?></option>
+                      <?php
+                           }
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                   </div>
@@ -241,16 +297,31 @@
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control">
                       <option>Caracter</option>
-                      <option value="1">Agresivo</option>
-                      <option value="2">Docil</option>
-                      <option value="3">Tranquilo</option>
+                      <?php
+                        $i = 1;
+                        foreach($caracteres->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->caracter_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
                     <select class="form-control">
-                      <option>Sexo</option>
-                      <option value="1">Macho</option>
-                      <option value="2">Hembra</option>
+                    <option>Sexo</option>
+                      <?php
+                        $i = 1;
+                        foreach($sexos->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->sexo_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                   </div>
@@ -265,10 +336,17 @@
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                     <select class="form-control">
-                      <option>Estado</option>
-                      <option value="1">Sano</option>
-                      <option value="2">Post-Hoperatorio</option>
-                      <option value="3">Tratamiento</option>
+                    <option>Estado</option>
+                      <?php
+                        $i = 1;
+                        foreach($estados->result() as $row){
+                       ?>
+                        <option value=<?php echo $i ?>><?php echo $row->estado_nombre; ?></option>
+                      <?php
+                          $i=$i+1; 
+                        }
+                          
+                      ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
@@ -294,4 +372,50 @@
     </div>
   </div>
 
+  <script>
+$(document).ready(function(){
+ $('#country').change(function(){
+  var country_id = $('#country').val();
+  if(country_id != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>dynamic_dependent/fetch_state",
+    method:"POST",
+    data:{country_id:country_id},
+    success:function(data)
+    {
+     $('#state').html(data);
+     $('#city').html('<option value="">Select City</option>');
+    }
+   });
+  }
+  else
+  {
+   $('#state').html('<option value="">Select State</option>');
+   $('#city').html('<option value="">Select City</option>');
+  }
+ });
+
+ $('#state').change(function(){
+  var state_id = $('#state').val();
+  if(state_id != '')
+  {
+   $.ajax({
+    url:"<?php echo base_url(); ?>dynamic_dependent/fetch_city",
+    method:"POST",
+    data:{state_id:state_id},
+    success:function(data)
+    {
+     $('#city').html(data);
+    }
+   });
+  }
+  else
+  {
+   $('#city').html('<option value="">Select City</option>');
+  }
+ });
+ 
+});
+</script>
 
