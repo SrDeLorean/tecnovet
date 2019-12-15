@@ -67,7 +67,7 @@
                     ?>
                       <tr>
                           <td> <?php echo $row->mascota_id; ?></td>
-                          <td> <?php echo $row->usuario_nombre; ?></td>
+                          <td> <?php echo $row->usuario_nombre." ".$row->usuario_apellido; ?></td>
                           <td> <?php echo $row->mascota_nombre; ?></td>
                           <td> <?php echo $row->mascota_microchip; ?></td>
                           <td> <?php echo $row->especie_nombre; ?></td>
@@ -85,7 +85,7 @@
                           }
                           ?></td>
                           <td> <?php echo $row->mascota_creacion; ?></td>
-                          <td> <?php echo $row->mascota_foto; ?></td>
+                          <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->mascota_foto) .'"class="img-fluid img-responsive " width="200" height="200"/>'; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
