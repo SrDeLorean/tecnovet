@@ -3,7 +3,7 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-  <h1 class="h3 mb-0 text-gray-800">Bienvenido 'usuario_nombre'</h1>
+  <h1 class="h3 mb-0 text-gray-800">Bienvenido  <?php print_r(($usu = $this->session->userdata())['administrador'][0]->usuario_nombre );?></h1>
   
 </div>
 
@@ -17,7 +17,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Dueños</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">N° </div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">N° <?php print_r(count($i = $this->db->get("usuarios")->result()));?></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -34,7 +34,7 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Mascotas</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">N°</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800">N° <?php print_r(count($i = $this->db->get("mascotas")->result()));?></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-paw fa-2x text-gray-300"></i>
@@ -53,7 +53,7 @@
             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Visitas</div>
             <div class="row no-gutters align-items-center">
               <div class="col-auto">
-                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">N°</div>
+                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">N°<?php print_r(count($i = $this->db->get("visitas")->result()));?></div>
               </div>
             </div>
           </div>
@@ -72,7 +72,8 @@
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Visitas del Dia</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800">N°</div>
+            <!-- --------------------------------------------------------------Aca hay que corregir el SQL por que no esta funcionando como deberia --------------------------------------->
+            <div class="h5 mb-0 font-weight-bold text-gray-800">N° <?php $this->db->select('visita_id');print_r( count($this->db->get_where('visitas', array('visita_fecha'.date('Y-m-d')))->result()));?></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-check fa-2x text-gray-300"></i>
@@ -89,7 +90,7 @@
 <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Visitas del dia 'fecha_dia'</h1>
+          <h1 class="h3 mb-2 text-gray-800">Visitas del dia <?php echo date('d-m-Y');?></h1>
           <p class="mb-4">En esta seccion se muestran las visitas del dia.</p>
 
           <!-- DataTales Example -->

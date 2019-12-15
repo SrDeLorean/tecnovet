@@ -185,19 +185,26 @@ class Administrador extends CI_Controller {
 
     public function editarUsuario(){
         if($this->session->userdata("administrador")){
-            $usuario_id= $this->input->post("usuario_id");
-            $usuario_rut= $this->input->post("usuario_rut");
-            $usuario_nombre= $this->input->post("usuario_nombre");
-            $usuario_apellido= $this->input->post("usuario_apellido");
-            $usuario_direccion= $this->input->post("usuario_direccion");
-            $usuario_email= $this->input->post("usuario_email");
-            $usuario_telefono= $this->input->post("usuario_telefono");
-            $usuario_perfil= $this->input->post("usuario_perfil");
-            $usuario_estado= $this->input->post("usuario_estado");
-            $usuario_password= $this->input->post("usuario_password");
-            $usuario_foto= $this->input->post("usuario_foto");
-            $this->usuario->editarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto);
-            echo json_encode(array("msg"=>"Usuario actualizado"));
+            $usuario_id         = $this->input->post("editar_id");
+            $usuario_rut        = $this->input->post("editar_rut");
+            $usuario_nombre     = $this->input->post("editar_nombre");
+            $usuario_apellido   = $this->input->post("editar_apellido");
+            $usuario_direccion  = $this->input->post("editar_direccion");
+            $usuario_email      = $this->input->post("editar_email");
+            $usuario_telefono   = $this->input->post("editar_telefono");
+            $usuario_perfil     = $this->input->post("editar_perfil");
+            $usuario_estado     = $this->input->post("editar_estado");
+            $usuario_password   = $this->input->post("editar_contaseña");
+            $usuario_foto       = " ";
+            $path 		        = $_FILES["foto"]["tmp_name"]; // "foto" debe ser el name del input y no el id
+            if(is_uploaded_file($path) && !empty($_FILES)){
+                $usuario_foto = file_get_contents($path);
+            }
+            if ($this->usuario->modificarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, md5($usuario_password), $usuario_foto)){
+                echo json_encode(array("msg"=>"Usuario actualizado"));
+            }else{
+                echo json_encode(array("msg"=>"Error 500"));
+            }
         }
     }
 
