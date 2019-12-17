@@ -76,6 +76,10 @@ $route['tratamiento'] = 'administrador/tratamiento';
 $route['hospitalizacion'] = 'administrador/hospitalizacion';
 $route['consulta'] = 'administrador/consulta';
 $route['visita'] = 'administrador/visita';
+$route['detalleFicha'] = 'administrador/detalleFicha';
+$route['detalleMascota'] = 'administrador/detalleMascota';
+$route['detalleUsuario'] = 'administrador/detalleUsuario';
+$route['detalleVisita'] = 'administrador/detalleVisita';
 
 //Modulo de gestion de usuario
 $route['crearUsuarioAdministrador'] = 'administrador/crearUsuario';
