@@ -83,7 +83,9 @@
                           <td> <?php echo $row->mascota_esterilizacion; ?></td>
                           <td> <?php echo $row->mascota_creacion; ?></td>
                           <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->mascota_foto) .'"class="img-fluid img-responsive " width="75" height="75"/>'; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                          <th>
+                          <a class="btn btn-primary btn-circle m-1 pb-1" href="<?php echo base_url()?>detalleMascota" role="button"><i class="fas fa-info"></i></a>
+                            <button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
