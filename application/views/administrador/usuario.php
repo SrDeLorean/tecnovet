@@ -91,7 +91,7 @@
                           
                           ?></td>
                           <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->usuario_foto) .'"class="img-fluid img-responsive " width="75" height="50"/>'; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 userEditBtn" href="#" role="button" data-toggle="modal" data-target="#modalEdit" value= ""><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 userEditBtn" href="#" role="button" data-toggle="modal" value= ""><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
@@ -128,7 +128,7 @@
           </div>
           <div class="p-5">
             <div class="text-center">
-              <h1 class="h4 text-gray-900 mb-4"></h1>
+            <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
             </div>
             <!-- inicio del formulario "form_editar"-->
             <form id="form_editar" class="user" method="POST" enctype="multipart/form-data">

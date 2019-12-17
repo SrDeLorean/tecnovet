@@ -35,7 +35,7 @@ $( document ).ready(function() {
             }
         });
     });
- //-------------Registrar Usuarios
+ //-------------Registrar Usuarios---------
     $("#bt_registrar").click(function(e){
         e.preventDefault();
         var form = $("#form_registrar")[0];
@@ -78,6 +78,8 @@ $( document ).ready(function() {
             $('#editar_perfil').val(data[8]);
             $('#editar_estado').val(data[9]);
             $('#editar_foto').val(data[10]);
+            var nombre = data[2]+data[3];
+            document.getElementById('nombre').innerHTML = nombre;
         });
     });
  //----------------Modificar usuario--------------------------------
@@ -126,7 +128,24 @@ $( document ).ready(function() {
             }
         });
     });
+ //---------Carga de datos al modal Editar Perfil-------------
+    $(document).ready(function(){
+        $('.perfilEditBtn').on('click', function(){
+            $('#modalEditPerfil').modal('show');
+            $tr = $(this).closest('tr');
+            var data = $tr.children("td").map(function(){
+                return $(this).text();
+            }).get();
+            //console.log(data);
+            $('#editar_id').val(data[0]);
+            $('#editar_nombre').val(data[1]);
+            $('#editar_descripcion').val(data[2]);
+            var nombre = data[1];
+            document.getElementById('nombre').innerHTML = nombre;
+        });
+    });
 
+//------------------------------------------------------------------------
     $("#bt_admin_masc_add").click(function(e){
         e.preventDefault();
         var form = $("#form_registrar")[0];
