@@ -2,8 +2,8 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Sexo</h1>
-          <p class="mb-4">Listado de  los Sexos hablitados en el sistema </p>
+          <h1 class="h3 mb-2 text-gray-800">Consultas</h1>
+          <p class="mb-4">Listado de  los tipos consultas ingresadas en el sistema </p>
           <div class="text-right">Ingresar <button type="button" class="btn btn-primary btn-circle m-1 pb-1 " data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i></button></div> 
 
           <!-- DataTales Example -->
@@ -11,7 +11,7 @@
             <div class="card-header py-3">
                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                 <div class="input-group">
-                  <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar sexo" aria-label="Search" aria-describedby="basic-addon2">
+                  <input type="text" class="form-control bg-light border-0 small" placeholder="Buscar Consulta" aria-label="Search" aria-describedby="basic-addon2">
                   <div class="input-group-append">
                     <button class="btn btn-primary" type="button">
                       <i class="fas fa-search fa-sm"></i>
@@ -43,12 +43,12 @@
                   <tbody >
                     <?php
 
-                        foreach($sexos->result() as $row){
+                        foreach($consulta->result() as $row){
                     ?>
                       <tr>
-                          <td> <?php echo $row->sexo_id; ?></td>
-                          <td> <?php echo $row->sexo_nombre; ?></td>
-                          <td> <?php echo $row->sexo_descripcion; ?></td>
+                          <td> <?php echo $row->consulta_id; ?></td>
+                          <td> <?php echo $row->consulta_nombre; ?></td>
+                          <td> <?php echo $row->consulta_descripcion; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
@@ -74,7 +74,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalEdit">Editar Sexo</h5>
+          <h5 class="modal-title" id="modalEdit">Editar Consultas</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -82,7 +82,7 @@
         <div class="modal-body">
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'sexo_nombre'</h1>
+                  <h1 class="h4 text-gray-900 mb-4">'Consulta_nombre'</h1>
                 </div>
                 <form class="perfil">
     
@@ -90,7 +90,7 @@
                     <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_descripcion" name="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control form-control-user" id="editar_hospitalizacion" name="descripcion" placeholder="Descripcion">
                   </div>
                   
                   <button id="bt_sexo_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
@@ -111,7 +111,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalAdd">Agregar Sexo <i class="fas fa-plus"></i></h5>
+          <h5 class="modal-title" id="modalAdd">Agregar Consulta <i class="fas fa-plus"></i></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -119,12 +119,12 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-            <form id="form_registrar_sexo" class="sexoAgregar">    
+            <form id="form_registrar_sexo" class="hospitalizacionAgregar">    
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="sexo_nombre" name="sexo_nombre" placeholder="Nombre">
+                <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="sexo_descripcion" name="sexo_descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control form-control-user" id="editar_descripcion" name="descripcion" placeholder="Descripcion">
               </div>
               
               <button id="bt_sexo_agregar" class="btn btn-primary btn-user btn-block">Agregar</button>                
