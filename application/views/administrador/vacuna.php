@@ -2,8 +2,8 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Sexo</h1>
-          <p class="mb-4">Listado de  los Sexos hablitados en el sistema </p>
+          <h1 class="h3 mb-2 text-gray-800">Vacunas</h1>
+          <p class="mb-4">Listado de  los Vacunas ingresadas en el sistema </p>
           <div class="text-right">Ingresar <button type="button" class="btn btn-primary btn-circle m-1 pb-1 " data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i></button></div> 
 
           <!-- DataTales Example -->
@@ -43,12 +43,12 @@
                   <tbody >
                     <?php
 
-                        foreach($sexos->result() as $row){
+                        foreach($vacuna->result() as $row){
                     ?>
                       <tr>
-                          <td> <?php echo $row->sexo_id; ?></td>
-                          <td> <?php echo $row->sexo_nombre; ?></td>
-                          <td> <?php echo $row->sexo_descripcion; ?></td>
+                          <td> <?php echo $row->vacuna_id; ?></td>
+                          <td> <?php echo $row->vacuna_nombre; ?></td>
+                          <td> <?php echo $row->vacuna_descripcion; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
@@ -74,7 +74,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalEdit">Editar Sexo</h5>
+          <h5 class="modal-title" id="modalEdit">Editar Vacuna</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -82,7 +82,7 @@
         <div class="modal-body">
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'sexo_nombre'</h1>
+                  <h1 class="h4 text-gray-900 mb-4">'Vacuna_nombre'</h1>
                 </div>
                 <form class="perfil">
     
@@ -90,7 +90,7 @@
                     <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_descripcion" name="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
                   </div>
                   
                   <button id="bt_sexo_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
@@ -111,7 +111,7 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalAdd">Agregar Sexo <i class="fas fa-plus"></i></h5>
+          <h5 class="modal-title" id="modalAdd">Agregar Vacuna <i class="fas fa-plus"></i></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -119,12 +119,12 @@
         <div class="modal-body">
           <div class="p-5">
             <!-- Por defecto el perfil es usuario y el estado es 1-->
-            <form id="form_registrar_sexo" class="sexoAgregar">    
+            <form id="form_registrar_sexo" class="vacunaAgregar">    
               <div class="form-group">
                 <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                <input type="text" class="form-control form-control-user" id="editar_descripcion" name="descripcion" placeholder="Descripcion">
               </div>
               
               <button id="bt_sexo_agregar" class="btn btn-primary btn-user btn-block">Agregar</button>                

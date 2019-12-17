@@ -24,6 +24,8 @@
         <thead>
           <tr>
             <th>ID</th>
+            <th>Dueño</th>
+            <th> RUT Dueño</th>
             <th>Mascota</th>
             <th>Fecha Siguiente Visita</th>
             <th>Confirmación</th>
@@ -35,6 +37,8 @@
         <tfoot>
           <tr>
           <th>ID</th>
+          <th>Dueño</th>
+          <th> RUT Dueño</th>
             <th>Mascota</th>
             <th>Fecha Siguiente Visita</th>
             <th>Confirmación</th>
@@ -50,12 +54,14 @@
                     ?>
                       <tr>
                           <td> <?php echo $row->ficha_id; ?></td>
+                          <td> Dueño</td>
+                          <td> RUT Dueño</td>
                           <td> <?php echo $row->ficha_mascota; ?></td>
                           <td> <?php echo $row->ficha_control; ?></td>
                           <td> <?php echo $row->ficha_confirmacion; ?></td>
                           <td> <?php echo $row->ficha_creacion; ?></td>
                           <td> <?php echo $row->ficha_actualizacion; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }

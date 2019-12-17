@@ -105,24 +105,24 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Ajustes:</h6>
             <a class="collapse-item" href="<?php echo base_url()?>ficha">Fichas</a>
-            <a class="collapse-item" href="utilities-color.html">Visitas</a>
-            <a class="collapse-item" href="utilities-border.html">Vacunas</a>
-            <a class="collapse-item" href="utilities-animation.html">Tratamientos</a>
-            <a class="collapse-item" href="utilities-other.html">Hospitalizaciones</a>
-            <a class="collapse-item" href="utilities-other.html">Consultas</a>
+            <a class="collapse-item" href="<?php echo base_url()?>visita">Visitas</a>
+            <a class="collapse-item" href="<?php echo base_url()?>vacuna">Vacunas</a>
+            <a class="collapse-item" href="<?php echo base_url()?>tratamiento">Tratamientos</a>
+            <a class="collapse-item" href="<?php echo base_url()?>hospitalizacion">Hospitalizaciones</a>
+            <a class="collapse-item" href="<?php echo base_url()?>consulta">Consultas</a>
           </div>
         </div>
       </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
-
-      <!-- Heading -->
+      <!-- Esto es para una posible actualización en el sistema.
+      <!-- Heading --
       <div class="sidebar-heading">
         Veterinaria
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
+      <!-- Nav Item - Pages Collapse Menu --
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
@@ -141,21 +141,21 @@
         </div>
       </li>
 
-      <!-- Nav Item - Charts -->
+      <!-- Nav Item - Charts --
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
 
-      <!-- Nav Item - Tables -->
+      <!-- Nav Item - Tables 
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
 
-      <!-- Divider -->
+      <!-- Divider 
       <hr class="sidebar-divider d-none d-md-block">
 
       <!-- Sidebar Toggler (Sidebar) -->
