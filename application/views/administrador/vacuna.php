@@ -28,6 +28,7 @@
                       <th>ID</th>
                       <th>Nombre</th>
                       <th>Descripción</th>
+                      <th>Especie</th>
                       <th>Acción</th>
                     </tr>
                   </thead>
@@ -36,6 +37,7 @@
                       <th>N°</th>
                       <th>Nombre</th>
                       <th>Descripción</th>
+                      <th>Especie</th>
                       <th>Acción</th>
 
                     </tr>
@@ -49,6 +51,7 @@
                           <td> <?php echo $row->vacuna_id; ?></td>
                           <td> <?php echo $row->vacuna_nombre; ?></td>
                           <td> <?php echo $row->vacuna_descripcion; ?></td>
+                          <td> <?php echo $row->vacuna_especie; ?></td>
                           <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php

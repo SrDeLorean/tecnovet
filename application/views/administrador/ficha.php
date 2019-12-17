@@ -25,8 +25,10 @@
           <tr>
             <th>ID</th>
             <th>Dueño</th>
-            <th> RUT Dueño</th>
+            <th>RUT Dueño</th>
             <th>Mascota</th>
+            <th>MicroChip</th>
+            <th>Visitas</th>
             <th>Fecha Siguiente Visita</th>
             <th>Confirmación</th>
             <th>Alta en el Sistema</th>
@@ -38,8 +40,10 @@
           <tr>
           <th>ID</th>
           <th>Dueño</th>
-          <th> RUT Dueño</th>
+          <th>RUT Dueño</th>
             <th>Mascota</th>
+            <th>MicroChip</th>
+            <th>Visitas</th>
             <th>Fecha Siguiente Visita</th>
             <th>Confirmación</th>
             <th>Alta en el Sistema</th>
@@ -57,6 +61,8 @@
                           <td> Dueño</td>
                           <td> RUT Dueño</td>
                           <td> <?php echo $row->ficha_mascota; ?></td>
+                          <td> Microchip</td>
+                          <td>Lista de visitas</td>
                           <td> <?php echo $row->ficha_control; ?></td>
                           <td> <?php echo $row->ficha_confirmacion; ?></td>
                           <td> <?php echo $row->ficha_creacion; ?></td>

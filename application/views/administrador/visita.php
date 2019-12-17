@@ -3,7 +3,6 @@
 <!-- Page Heading -->
 <h1 class="h3 mb-2 text-gray-800">Visitas</h1>
 <p class="mb-4">Listado de todos las Visitas en el sistema</p>
-<div class="text-right">Ingresar <button type="button" class="btn btn-primary btn-circle m-1 pb-1 " data-toggle="modal" data-target="#modalAdd"><i class="fas fa-plus"></i></button></div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
