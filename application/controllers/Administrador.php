@@ -166,7 +166,11 @@ class Administrador extends CI_Controller {
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
             $this->load->database();
-            $data["fichas"] = $this->ficha->fichas();
+            $this->db->select("ficha_id,usuario_nombre,usuario_apellido,usuario_rut, mascota_nombre, mascota_microchip, ficha_control, ficha_confirmacion, ficha_creacion, ficha_actualizacion");
+            $this->db->from("fichas");
+            $this->db->join("mascotas", "fichas.ficha_mascota=mascotas.mascota_id");
+            $this->db->join("usuarios", "mascotas.mascota_usuario=usuarios.usuario_id");
+            $data["fichas"] = $this->db->get();
             $this->load->view('administrador/ficha', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{
@@ -177,7 +181,10 @@ class Administrador extends CI_Controller {
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
             $this->load->database();
-            $data["vacuna"] = $this->vacuna->vacunas();
+            $this->db->select("vacuna_id, vacuna_nombre, vacuna_descripcion, especie_nombre");
+            $this->db->from("vacunas");
+            $this->db->join("especies", "vacunas.vacuna_especie=especies.especie_id");
+            $data["vacuna"] = $this->db->get();
             $this->load->view('administrador/vacuna', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{

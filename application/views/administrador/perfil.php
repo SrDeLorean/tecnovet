@@ -49,8 +49,8 @@
                           <td> <?php echo $row->perfil_id; ?></td>
                           <td> <?php echo $row->perfil_nombre; ?></td>
                           <td> <?php echo $row->perfil_descripcion; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
-                      </tr>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 perfilEditBtn" role="button" data-toggle="modal"><i class="fas fa-edit"></i></button></th>
+                        </tr>
                       <?php
                           }
                           
@@ -67,14 +67,14 @@
       </div>
       <!-- End of Main Content -->
 
-      <!-- CRUD MODAL editar Detalle Usuario  -->
+      <!-- CRUD MODAL editar Detalle Perfil  -->
 
-<!-- Modal editar User-->
-  <div class="modal fade bd-example-modal-lg" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
+<!-- Modal editar Perfil-->
+  <div class="modal fade bd-example-modal-lg" id="modalEditPerfil" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalEdit">Editar Perfil</h5>
+          <h5 class="modal-title" id="modalEditPerfil">Editar Perfil</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -82,15 +82,15 @@
         <div class="modal-body">
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'perfil_nombre'</h1>
+                  <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
                 </div>
                 <form class="perfil">
-    
+                  <input type="text" class="form-control form-control-user" id="editar_id" name="id" hidden="true"> 
                   <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control form-control-user" id="editar_descripcion" name="descripcion" placeholder="Descripcion">
                   </div>
                   
                   <button id="bt_perfil_editar" class="btn btn-warning btn-user btn-block">Editar</button>                

@@ -49,7 +49,7 @@
                           <td> <?php echo $row->caracter_id; ?></td>
                           <td> <?php echo $row->caracter_nombre; ?></td>
                           <td> <?php echo $row->caracter_descripcion; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 caracterEditBtn" href="#" role="button" data-toggle="modal"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
@@ -69,8 +69,8 @@
 
       <!-- CRUD MODAL editar Detalle Usuario  -->
 
-<!-- Modal editar User-->
-  <div class="modal fade bd-example-modal-lg" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
+<!-- Modal editar Caracter-->
+  <div class="modal fade bd-example-modal-lg" id="modalEditCaracter" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -82,15 +82,15 @@
         <div class="modal-body">
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'caracter_nombre'</h1>
+                <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
                 </div>
                 <form class="perfil">
-    
+                  <input type="text" class="form-control form-control-user" id="caracter_id_editar" name="id" hidden="true"> 
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control form-control-user" id="caracter_nombre_editar" name="nombre" placeholder="Nombre">
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="editar_correo" name="descripcion" placeholder="Descripcion">
+                    <input type="text" class="form-control form-control-user" id="caracter_descripcion_editar" name="descripcion" placeholder="Descripcion">
                   </div>
                   
                   <button id="bt_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
