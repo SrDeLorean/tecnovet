@@ -375,13 +375,23 @@ $( document ).ready(function() {
             var data = $tr.children("td").map(function(){
                 return $(this).text();
             }).get();
-            console.log(data);
-            $('#raza_id_editar').val(data[0]);
-           
-            var dueño = data[1];
-            document.getElementById('nombreDueño').innerHTML = dueño;
+            console.log(data[0]);
+            $d = data[0];
+            $.ajax({
+                url:base_url+'cargarFicha',
+                type: 'Post',
+                dataType: 'json',
+                data: $d
+            })
+            .done(function(data){
+                console.log(data);
+            });
         });
     });
+    
+        
+    
+    
 //-------------------------Vacuna  Mascota ----------------------------
 //-------------------------Agregar Vacuna -------------------------
 //-------------------------Editar Vacuna Mascota -------------------------

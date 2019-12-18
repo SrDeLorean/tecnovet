@@ -166,17 +166,23 @@ class Administrador extends CI_Controller {
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
             $this->load->database();
-            $this->db->select("ficha_id,usuario_nombre,usuario_apellido,usuario_rut, mascota_nombre, mascota_microchip, ficha_control, ficha_confirmacion, ficha_creacion, ficha_actualizacion");
-            $this->db->from("fichas");
-            $this->db->join("mascotas", "fichas.ficha_mascota=mascotas.mascota_id");
-            $this->db->join("usuarios", "mascotas.mascota_usuario=usuarios.usuario_id");
-            $data["fichas"] = $this->db->get();
+            $data["fichas"] = $this->ficha->imprimirFichas();
             $this->load->view('administrador/ficha', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
         }
     }
+    public function cargarFicha(){
+        if($this->session->userdata("administrador")){
+        $id = $this->input->post('');
+        $data["vistaFicha"] =  $this->ficha->cargarFicha($id);
+        return $data;
+        }else{
+            redirect('index');
+        }
+      }
+
     public function vacuna(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');

@@ -71,6 +71,7 @@ $route['sexo'] = 'administrador/sexo';
 $route['especie'] = 'administrador/especie';
 $route['raza'] = 'administrador/raza';
 $route['ficha'] = 'administrador/ficha';
+$route['cargarFicha'] = 'administrador/cargarFicha';
 $route['vacuna'] = 'administrador/vacuna';
 $route['tratamiento'] = 'administrador/tratamiento';
 $route['hospitalizacion'] = 'administrador/hospitalizacion';
