@@ -84,7 +84,7 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
                 </div>
-                <form class="perfil">
+                <form class="form_editar_perfil">
                   <input type="text" class="form-control form-control-user" id="editar_id" name="id" hidden="true"> 
                   <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="editar_nombre" name="nombre" placeholder="Nombre">
@@ -93,7 +93,7 @@
                     <input type="text" class="form-control form-control-user" id="editar_descripcion" name="descripcion" placeholder="Descripcion">
                   </div>
                   
-                  <button id="bt_perfil_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_perfil" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

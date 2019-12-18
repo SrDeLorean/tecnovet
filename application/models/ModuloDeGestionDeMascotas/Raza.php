@@ -24,11 +24,10 @@ class Raza extends CI_Model {
      * raza_descripcion: elemento a modificar
      * raza_especie: elemento a modificar
      */
-    public function editarRaza($raza_id, $raza_nombre, $raza_descripcion, $raza_especie){
+    public function editarRaza($raza_id, $raza_nombre, $raza_descripcion){
       $this->db->where("raza_id", $raza_id);
 		  $data = array("raza_nombre"   =>$raza_nombre,
-                    "raza_descripcion"   =>$raza_descripcion,
-                    "raza_especie"   =>$raza_especie);       
+                    "raza_descripcion"   =>$raza_descripcion);       
 		  return $this->db->update("razas",$data);
 	}
     

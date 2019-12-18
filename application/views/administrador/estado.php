@@ -85,7 +85,7 @@
                 <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
                 </div>
                 <form id="form_registrar_editar" class="perfil">
-    
+                <input type="text" class="form-control form-control-user" id="estado_id_editar" name="id" hidden="true"> 
                   <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="estado_nombre_editar" name="estado_nombre_editar" placeholder="Nombre">
                   </div>

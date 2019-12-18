@@ -100,7 +100,7 @@
                 <h1 class="h4 text-gray-900 mb-4"><p id="nombreDueño"></p></h1>
                 <h1 class="h4 text-gray-900 mb-4"><p id="nombreMascota"></p></h1>
                 </div>
-                <form class="perfil">
+                <form class="form_editar_ficha">
     
                   <div class="form-group">
                     <input type="datetime-local" class="form-control form-control-user" id="editar_nombre" name="fecha" placeholder="Fecha">
@@ -113,7 +113,7 @@
                     </select>
                   </div>
                   
-                  <button id="bt_especie_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_ficha" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">
