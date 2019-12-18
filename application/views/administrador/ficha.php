@@ -62,12 +62,12 @@
                           <td> RUT Dueño</td>
                           <td> <?php echo $row->ficha_mascota; ?></td>
                           <td> Microchip</td>
-                          <td>Lista de visitas</td>
+                          <td><button class="btn btn-primary btn-circle m-1 pb-1 " role="button" data-toggle="modal" data-target="#modalVisitaFicha"><i class="fas fa-search"></i></button></td>
                           <td> <?php echo $row->ficha_control; ?></td>
                           <td> <?php echo $row->ficha_confirmacion; ?></td>
                           <td> <?php echo $row->ficha_creacion; ?></td>
                           <td> <?php echo $row->ficha_actualizacion; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 " role="button" data-toggle="modal" data-target="#modalEditar"><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
@@ -125,5 +125,49 @@
     </div>
   </div>
 
+<!-- Modal para el uso de visitas, esto es para ver la lista de visitas que a realizado la mascota seleccionada-->
 
+<!-- Modal -->
+<div class="modal fade" id="modalVisitaFicha" tabindex="-1" role="dialog" aria-labelledby="modalVisitaFicha" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalVisitaFicha">Resumen de Visitas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Veterinario</th>
+            <th>Tipo Consulta</th>
+            <th>Obervación</th>
+            <th>Fecha</th>
+            <th>Documento</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+          <th>ID</th>
+            <th>Veterinario</th>
+            <th>Tipo Consulta</th>
+            <th>Obervación</th>
+            <th>Fecha</th>
+            <th>Documento</th>
+          </tr>
+        </tfoot>
+        <tbody >
+                    
+        </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
