@@ -56,13 +56,13 @@
         <tbody >
                     <?php
 
-                        foreach($visita->result() as $row){
+                        foreach($imprimirVisitas->result() as $row){
                     ?>
                       <tr>
                           <td> <?php echo $row->visita_id; ?></td>
-                          <td> <?php echo $row->visita_usuario; ?></td>
-                          <td> <?php echo $row->visita_ficha; ?></td>
-                          <td> <?php echo $row->visita_consulta; ?></td>
+                          <td> <?php echo $row->usuario_nombre." ".$row->usuario_apellido; ?></td>
+                          <td> <?php echo $row->mascota_nombre; ?></td>
+                          <td> <?php echo $row->consulta_nombre; ?></td>
                           <td> <?php echo $row->visita_fr; ?></td>
                           <td> <?php echo $row->visita_fc; ?></td>
                           <td> <?php echo $row->visita_precion; ?></td>
