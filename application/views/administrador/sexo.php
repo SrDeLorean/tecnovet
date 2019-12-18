@@ -93,7 +93,7 @@
                     <input type="text" class="form-control form-control-user" id="sexo_descripcion_editar" name="descripcion" placeholder="Descripcion">
                   </div>
                   
-                  <button id="bt_sexo_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_sexo" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

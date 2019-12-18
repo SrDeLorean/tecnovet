@@ -93,7 +93,7 @@
                     <textarea class="form-control" id="especie_descripcion_editar" rows="5"></textarea>
                   </div>
                   
-                  <button id="bt_especie_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_especie" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

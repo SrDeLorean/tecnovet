@@ -96,7 +96,7 @@
                     <textarea class="form-control" id="raza_descripcion_editar" rows="4"></textarea>
                   </div>
                   
-                  <button id="bt_raza_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_raza" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">

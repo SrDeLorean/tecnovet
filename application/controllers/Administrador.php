@@ -90,6 +90,17 @@ class Administrador extends CI_Controller {
         }
     }
 
+    public function editarPerfil(){
+        $perfil_id = $this->input->post('editar_id');
+        $perfil_nombre = $this->input->post('editar_nombre');
+        $perfil_descripcion = $this->input->post('editar_descripcion');
+		if ($this->perfil->editarPerfil($perfil_id, $perfil_nombre, $perfil_descripcion)){
+			echo json_encode(array('msg'=>"Perfil editado"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando ficha"));
+		}
+    }
+
     public function mascota(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -118,6 +129,18 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function editarEstado(){
+        $estado_id = $this->input->post('editar_id');
+        $estado_nombre = $this->input->post('editar_nombre');
+        $estado_descripcion = $this->input->post('editar_descripcion');
+		if ($this->estado->editarEstado($estado_id, $estado_nombre, $estado_descripcion)){
+			echo json_encode(array('msg'=>"estado editado"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando estado"));
+		}
+    }
+
     public function caracter(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -129,6 +152,18 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function editarCaracter(){
+        $caracter_id = $this->input->post('editar_id');
+        $caracter_nombre = $this->input->post('editar_nombre');
+        $caracter_descripcion = $this->input->post('editar_descripcion');
+		if ($this->caracter->editarCaracter($caracter_id, $caracter_nombre, $caracter_descripcion)){
+			echo json_encode(array('msg'=>"Caracter editado"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando caracter"));
+		}
+    }
+
     public function sexo(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -140,6 +175,18 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function editarSexo(){
+        $sexo_id = $this->input->post('editar_id');
+        $sexo_nombre = $this->input->post('editar_nombre');
+        $sexo_descripcion = $this->input->post('editar_descripcion');
+		if ($this->sexo->editarSexo($sexo_id, $sexo_nombre, $sexo_descripcion)){
+			echo json_encode(array('msg'=>"sexo editado"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando sexo"));
+		}
+    }
+
     public function especie(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -151,6 +198,19 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function editarEspecie(){
+        $especie_id = $this->input->post('editar_id');
+        $especie_nombre = $this->input->post('editar_nombre');
+        $especie_descripcion = $this->input->post('editar_descripcion');
+		if ($this->especie->editarEspecie($especie_id, $especie_nombre, $especie_descripcion)){
+			echo json_encode(array('msg'=>"especie editado"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando especie"));
+		}
+    }
+
+
     public function raza(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -162,6 +222,18 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function editarRaza(){
+        $raza_id = $this->input->post('editar_id');
+        $raza_nombre = $this->input->post('editar_nombre');
+        $raza_descripcion = $this->input->post('editar_descripcion');
+		if ($this->raza->editarRaza($raza_id, $raza_nombre, $raza_descripcion)){
+			echo json_encode(array('msg'=>"raza editado"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando raza"));
+		}
+    }
+
     public function ficha(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
@@ -265,6 +337,21 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+
+    public function editarFicha(){
+        $vacuna_id = $this->input->post('vacuna_id');
+        $vacuna_mascota = $this->input->post('vacuna_mascota');
+        $vacuna_control = $this->input->post('vacuna_control');
+        $vacuna_confirmacion = $this->input->post('vacuna_confirmacion');
+        $vacuna_creacion = $this->input->post('vacuna_creacion');
+        $vacuna_actualizacion = $this->input->post('vacuna_actualizacion');
+		if ($this->ficha->editarFicha($vacuna_id, $vacuna_mascota, $vacuna_control, $vacuna_confirmacion, $vacuna_creacion, $vacuna_actualizacion)){
+			echo json_encode(array('msg'=>"Ficha editada"));
+		}else{
+			echo json_encode(array('msg'=>"Error editando ficha"));
+		}
+    }
+
     public function detalleMascota(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');

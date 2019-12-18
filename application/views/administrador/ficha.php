@@ -113,7 +113,7 @@
                     </select>
                   </div>
                   
-                  <button id="bt_especie_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+                  <button id="bt_editar_ficha" class="btn btn-warning btn-user btn-block">Editar</button>                
                 </form>              
         </div>
         <div class="modal-footer">
