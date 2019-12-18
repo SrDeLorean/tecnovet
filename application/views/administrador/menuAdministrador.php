@@ -103,141 +103,184 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>N°</th>
+                      <th>Ficha</th>
                       <th>Dueño</th>
                       <th>Mascota</th>
                       <th>Especie</th>
-                      <th>Hora</th>
                       <th>Contacto</th>
+                      <th>Consulta</th>
+                      <th>Hora</th>
+                      <th>Estado</th>
                       <th>Ingresar</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>N°</th>
+                    <th>Ficha</th>
                       <th>Dueño</th>
                       <th>Mascota</th>
                       <th>Especie</th>
-                      <th>Hora</th>
                       <th>Contacto</th>
+                      <th>Consulta</th>
+                      <th>Hora</th>
+                      <th>Estado</th>
                       <th>Ingresar</th>
                     </tr>
                   </tfoot>
                   <tbody>
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                    </tr>
-                    
-                    <tr>
-                      <td>Paul Byrd</td>
-                      <td>Chief Financial Officer (CFO)</td>
-                      <td>New York</td>
-                      <td>64</td>
-                      <td>2010/06/09</td>
-                      <td>$725,000</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Gloria Little</td>
-                      <td>Systems Administrator</td>
-                      <td>New York</td>
-                      <td>59</td>
-                      <td>2009/04/10</td>
-                      <td>$237,500</td>
-                    </tr>
-                    
-                    <tr>
-                      <td>Jennifer Chang</td>
-                      <td>Regional Director</td>
-                      <td>Singapore</td>
-                      <td>28</td>
-                      <td>2010/11/14</td>
-                      <td>$357,650</td>
-                    </tr>
-                    
-                    <tr>
-                      <td>Zenaida Frank</td>
-                      <td>Software Engineer</td>
-                      <td>New York</td>
-                      <td>63</td>
-                      <td>2010/01/04</td>
-                      <td>$125,250</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Zorita Serrano</td>
-                      <td>Software Engineer</td>
-                      <td>San Francisco</td>
-                      <td>56</td>
-                      <td>2012/06/01</td>
-                      <td>$115,000</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Jennifer Acosta</td>
-                      <td>Junior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>43</td>
-                      <td>2013/02/01</td>
-                      <td>$75,650</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Cara Stevens</td>
-                      <td>Sales Assistant</td>
-                      <td>New York</td>
-                      <td>46</td>
-                      <td>2011/12/06</td>
-                      <td>$145,600</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Hermione Butler</td>
-                      <td>Regional Director</td>
-                      <td>London</td>
-                      <td>47</td>
-                      <td>2011/03/21</td>
-                      <td>$356,250</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Lael Greer</td>
-                      <td>Systems Administrator</td>
-                      <td>London</td>
-                      <td>21</td>
-                      <td>2009/02/27</td>
-                      <td>$103,500</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Jonas Alexander</td>
-                      <td>Developer</td>
-                      <td>San Francisco</td>
-                      <td>30</td>
-                      <td>2010/07/14</td>
-                      <td>$86,500</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Shad Decker</td>
-                      <td>Regional Director</td>
-                      <td>Edinburgh</td>
-                      <td>51</td>
-                      <td>2008/11/13</td>
-                      <td>$183,000</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Michael Bruce</td>
-                      <td>Javascript Developer</td>
-                      <td>Singapore</td>
-                      <td>29</td>
-                      <td>2011/06/27</td>
-                      <td>$183,000</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                     <tr>
-                      <td>Donna Snider</td>
-                      <td>Customer Support</td>
-                      <td>New York</td>
-                      <td>27</td>
-                      <td>2011/01/25</td>
-                      <td>$112,000</td>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
+                    </tr>
+                    <tr>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
+                    </tr>
+                    <tr>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
+                    </tr>
+                    <tr>
+                      <td>id</td>
+                      <td>nombre dueño</td>
+                      <td>nombre mascota</td>
+                      <td>especie</td>
+                      <td>contacto</td>
+                      <td>consulta</td>
+                      <td>hora</td>
+                      <td>estado</td>
+                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -254,3 +297,59 @@
 
 </div>
 <!-- End of Main Content -->
+
+<!--Inicio Modal para igresar una visita -->
+
+<div class="modal fade" id="modalIngresarVisita" tabindex="-1" role="dialog" aria-labelledby="modalIngresarVisita" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+      <h5 class="modal-title" id="modalAdd">Ingreso de Visitas <i class="fas fa-plus"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="p-5">
+            <!-- Por defecto el perfil es "3" usuario y el estado es "1" activo-->
+                <form id="form_registrar" class="user">
+                <div class="form-group">
+                    <select class="form-control">
+                      <option>Tipo Consulta</option>
+                      <option value="1">Consulta</option>
+                      <option value="2">Vacuna</option>
+                    </select>
+                  </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="fr" name="fr" placeholder="FR">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="fc" name="fc" placeholder="FC">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="precion" name="precion" placeholder="Preción">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="mucosa" name="mucosa" placeholder="Mucosa">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="observacion" name="observacion" placeholder="Observación">
+                  </div>
+                    <div class="file-field input-field form-group mt-4 file-path-wrapper ">
+                      <input type="file" class="form-control-file file-path validate" id="usuario_doc" name="usuario_doc" accept="application/pdf">
+                    </div>
+                  </div>
+                  <button id="bt_IngresarVisita" class="btn btn-primary btn-user btn-block">Ingresar visita</button>                
+                </form>              
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
