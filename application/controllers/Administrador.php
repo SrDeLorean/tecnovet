@@ -229,6 +229,7 @@ class Administrador extends CI_Controller {
             $this->load->view('administrador/templateAdmin/header');
             $this->load->database();
             $data["visita"] = $this->visita->visitas();
+            $data["imprimirVisitas"] = $this->visita->imprimirVisitas();
             $this->load->view('administrador/visita', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{
