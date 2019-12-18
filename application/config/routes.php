@@ -91,6 +91,7 @@ $route['crearMascota'] = 'administrador/crearMascota';
 $route['crearEstado'] = 'administrador/crearEstado';
 $route['crearCaracter'] = 'administrador/crearCaracter';
 $route['crearSexo'] = 'administrador/crearSexo';
+$route['crearEspecie'] = 'administrador/crearEspecie';
 
 
 //Menu de interfaces para el Veterinario

@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('America/Santiago');
-
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -490,6 +489,7 @@ $config['compress_output'] = FALSE;
 |
 */
 $config['time_reference'] = 'local';
+
 
 /*
 |--------------------------------------------------------------------------

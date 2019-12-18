@@ -132,7 +132,7 @@
           </div>
           <div class="p-5">
             <div class="text-center">
-              <h1 class="h4 text-gray-900 mb-4"></h1>
+            <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
             </div>
             <!-- inicio del formulario "form_editar"-->
             <form id="form_editar" class="user" method="POST" enctype="multipart/form-data">

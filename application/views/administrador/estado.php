@@ -49,7 +49,7 @@
                           <td> <?php echo $row->estado_id; ?></td>
                           <td> <?php echo $row->estado_nombre; ?></td>
                           <td> <?php echo $row->estado_descripcion; ?></td>
-                          <th><button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                          <th><button class="btn btn-warning btn-circle m-1 pb-1 estadoEditBtn" href="#" role="button" data-toggle="modal" ><i class="fas fa-edit"></i></button></th>
                       </tr>
                       <?php
                           }
@@ -69,8 +69,8 @@
 
       <!-- CRUD MODAL editar Detalle Usuario  -->
 
-<!-- Modal editar User-->
-  <div class="modal fade bd-example-modal-lg" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
+<!-- Modal editar Estado-->
+  <div class="modal fade bd-example-modal-lg" id="modalEditEstado" tabindex="-1" role="dialog" aria-labelledby="modalEdit" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -82,7 +82,7 @@
         <div class="modal-body">
           <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">'estado_nombre'</h1>
+                <h1 class="h4 text-gray-900 mb-4"><p id="nombre"></p></h1>
                 </div>
                 <form id="form_registrar_editar" class="perfil">
     
