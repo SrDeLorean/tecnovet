@@ -109,6 +109,7 @@
                       <th>Especie</th>
                       <th>Hora</th>
                       <th>Contacto</th>
+                      <th>Ingresar</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -119,6 +120,7 @@
                       <th>Especie</th>
                       <th>Hora</th>
                       <th>Contacto</th>
+                      <th>Ingresar</th>
                     </tr>
                   </tfoot>
                   <tbody>

@@ -31,6 +31,17 @@ class Administrador extends CI_Controller {
         $this->load->model('ModuloDeGestionDeMascotas/sexo');
         //modulo de gestion de fichas
         $this->load->model('ModuloDeGestionDeFichas/ficha');
+        $this->load->model('ModuloDeGestionDeFichas/vacuna');
+        $this->load->model('ModuloDeGestionDeFichas/tratamiento');
+        $this->load->model('ModuloDeGestionDeFichas/hospitalizacion');
+        $this->load->model('ModuloDeGestionDeFichas/consulta');
+        $this->load->model('ModuloDeGestionDeFichas/visita');
+
+        //Modulo de detalles
+        $this->load->model('ModuloDeGestionDeDetalles/detalleFicha');
+        $this->load->model('ModuloDeGestionDeDetalles/detalleVisita');
+        $this->load->model('ModuloDeGestionDeDetalles/detalleMascota');
+        $this->load->model('ModuloDeGestionDeDetalles/detalleUsuario');       
     }
     
     public function index(){
@@ -162,6 +173,108 @@ class Administrador extends CI_Controller {
             redirect('index');
         }
     }
+    public function vacuna(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["vacuna"] = $this->vacuna->vacunas();
+            $this->load->view('administrador/vacuna', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function tratamiento(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["tratamiento"] = $this->tratamiento->tratamientos();
+            $this->load->view('administrador/tratamiento', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function hospitalizacion(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["hospitalizacion"] = $this->hospitalizacion->hospitalizaciones();
+            $this->load->view('administrador/hospitalizacion', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function consulta(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["consulta"] = $this->consulta->consultas();
+            $this->load->view('administrador/consulta', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function visita(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["visita"] = $this->visita->visitas();
+            $this->load->view('administrador/visita', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+
+    public function detalleVisita(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["visita"] = $this->visita->visitas();
+            $this->load->view('administrador/detalleVisita', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function detalleFicha(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["fichas"] = $this->ficha->fichas();
+            $this->load->view('administrador/detalleFicha', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function detalleMascota(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["mascotas"] = $this->mascota->mascotas();
+            $this->load->view('administrador/detalleMascota', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+    public function detalleUsuario(){
+        if($this->session->userdata("administrador")){
+            $this->load->view('administrador/templateAdmin/header');
+            $this->load->database();
+            $data["usuarios"] = $this->usuario->usuarios();
+            $this->load->view('administrador/detalleUsuario', $data);
+            $this->load->view('administrador/templateAdmin/footer');
+        }else{
+            redirect('index');
+        }
+    }
+
+
 
     /**
      * 

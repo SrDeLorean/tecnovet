@@ -26,6 +26,7 @@
           <tr>
             <th>ID</th>
             <th>Dueño</th>
+            <th>RUT Dueño</th>
             <th>Nombre</th>
             <th>Microchip</th>
             <th>Especie</th>
@@ -45,6 +46,7 @@
           <tr>
           <th>ID</th>
             <th>Dueño</th>
+            <th>RUT Dueño</th>
             <th>Nombre</th>
             <th>Microchip</th>
             <th>Especie</th>
