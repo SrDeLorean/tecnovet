@@ -169,4 +169,47 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="modalVisitaFicha" tabindex="-1" role="dialog" aria-labelledby="modalVisitaFicha" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalVisitaFicha">Resumen de Visitas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Veterinario</th>
+            <th>Tipo Consulta</th>
+            <th>Obervación</th>
+            <th>Fecha</th>
+            <th>Documento</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+          <th>ID</th>
+            <th>Veterinario</th>
+            <th>Tipo Consulta</th>
+            <th>Obervación</th>
+            <th>Fecha</th>
+            <th>Documento</th>
+          </tr>
+        </tfoot>
+        <tbody >
+                    
+        </tbody>
+      </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
