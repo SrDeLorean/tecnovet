@@ -68,8 +68,8 @@
                           <td> <?php echo $row->visita_precion; ?></td>
                           <td> <?php echo $row->visita_mucosa; ?></td>
                           <td> <?php echo $row->visita_temperatura; ?></td>
-                          <td> <?php echo $row->visita_fecha; ?></td>
-                          <td> <?php echo $row->visita_documento; ?><i class="fas fa-file-download d-flex justify-content-center" ></i></td>
+                          <td> <?php echo $row->visita_fecha; ?></td>                          
+                          <td><object data="data:application/pdf;base64,<?php echo base64_encode($row->visita_documento); ?>" type="application/pdf"></object></td>                          
                           <td> <?php echo $row->visita_observacion; ?></td>
                           
                       </tr>

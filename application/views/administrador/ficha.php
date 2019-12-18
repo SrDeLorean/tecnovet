@@ -84,7 +84,7 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Modal editar User-->
+<!-- Modal editar FICHA-->
 <div class="modal fade bd-example-modal-lg" id="modalEditarFicha" tabindex="-1" role="dialog" aria-labelledby="modalEditar" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -100,8 +100,8 @@
                 <h1 class="h4 text-gray-900 mb-4"><p id="nombreDueño"></p></h1>
                 <h1 class="h4 text-gray-900 mb-4"><p id="nombreMascota"></p></h1>
                 </div>
-                <form class="form_editar_ficha">
-    
+                <form class="perfil" id="fichaEditar">
+                  <input type="text" class="form-control form-control-user" id="ficha_id_editar" name="id" hidden="true">         
                   <div class="form-group">
                     <input type="datetime-local" class="form-control form-control-user" id="editar_nombre" name="fecha" placeholder="Fecha">
                   </div>
@@ -202,7 +202,9 @@
           </tr>
         </tfoot>
         <tbody >
-                    
+          <?php foreach ($data as $row){ ?>
+            <th><?php echo $row->visita_id ?> </th>
+         <?php } ?>   
         </tbody>
       </table>
       </div>

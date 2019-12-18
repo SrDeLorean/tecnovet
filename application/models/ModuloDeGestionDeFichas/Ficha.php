@@ -40,5 +40,20 @@ class Ficha extends CI_Model {
      */
 	public function fichas(){
 		return $this->db->get("fichas");
-	}
+  }
+  public function imprimirFichas(){
+    $this->db->select("ficha_id,usuario_nombre,usuario_apellido,usuario_rut, mascota_nombre, mascota_microchip, ficha_control, ficha_confirmacion, ficha_creacion, ficha_actualizacion");
+    $this->db->from("fichas");
+    $this->db->join("mascotas", "fichas.ficha_mascota=mascotas.mascota_id");
+    $this->db->join("usuarios", "mascotas.mascota_usuario=usuarios.usuario_id");
+    return $this->db->get();
+  }
+  public function cargarFicha($id){
+    $this->db->select("visita_id, usuario_nombre, usuario_apellido, consulta_nombre, visita_observacion, visita_fecha, visita_documento");
+    $this->db->from("visitas");
+    $this->db->join("consultas", "consultas.consulta_id = visitas.visita_consulta");
+    $this->db->join("usuarios", "visitas.visita_usuario = visitas.visita_consulta");
+    $this->db->where("visitas.visita_ficha = '$id'");
+    return $this->db->get();
+  }
 }

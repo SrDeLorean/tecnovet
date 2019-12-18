@@ -79,6 +79,7 @@ $route['editarEspecie'] = 'administrador/editarEspecie';
 $route['raza'] = 'administrador/raza';
 $route['editarRaza'] = 'administrador/editarRaza';
 $route['ficha'] = 'administrador/ficha';
+$route['cargarFicha'] = 'administrador/cargarFicha';
 $route['editarFicha'] = 'administrador/editarFicha';
 $route['vacuna'] = 'administrador/vacuna';
 $route['tratamiento'] = 'administrador/tratamiento';
