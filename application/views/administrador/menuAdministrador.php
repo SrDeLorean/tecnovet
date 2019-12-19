@@ -107,11 +107,10 @@
                       <th>Dueño</th>
                       <th>Mascota</th>
                       <th>Especie</th>
+                      <th>Caracter</th>
                       <th>Contacto</th>
                       <th>Consulta</th>
-                      <th>Hora</th>
-                      <th>Estado</th>
-                      <th>Ingresar</th>
+                      <th>Hora</th>                      
                     </tr>
                   </thead>
                   <tfoot>
@@ -120,11 +119,10 @@
                       <th>Dueño</th>
                       <th>Mascota</th>
                       <th>Especie</th>
+                      <th>Caracter</th>
                       <th>Contacto</th>
                       <th>Consulta</th>
                       <th>Hora</th>
-                      <th>Estado</th>
-                      <th>Ingresar</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -136,9 +134,7 @@
                       <td>contacto</td>
                       <td>consulta</td>
                       <td>hora</td>
-                      <td>estado</td>
-                      <td><button class="btn btn-primary btn-circle m-1 pb-1 ingresarVisitaBtn" role="button" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button></td>
-                    </tr>
+                      </tr>
                     <tr>
                       <td>id</td>
                       <td>nombre dueño</td>
@@ -298,58 +294,3 @@
 </div>
 <!-- End of Main Content -->
 
-<!--Inicio Modal para igresar una visita -->
-
-<div class="modal fade" id="modalIngresarVisita" tabindex="-1" role="dialog" aria-labelledby="modalIngresarVisita" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content modal-lg">
-      <div class="modal-header">
-      <h5 class="modal-title" id="modalAdd">Ingreso de Visitas <i class="fas fa-plus"></i></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <div class="p-5">
-            <!-- Por defecto el perfil es "3" usuario y el estado es "1" activo-->
-                <form id="form_registrar" class="user">
-                <div class="form-group">
-                    <select class="form-control">
-                      <option>Tipo Consulta</option>
-                      <option value="1">Consulta</option>
-                      <option value="2">Vacuna</option>
-                    </select>
-                  </div>
-                <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="fr" name="fr" placeholder="FR">
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="fc" name="fc" placeholder="FC">
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                      <input type="text" class="form-control form-control-user" id="precion" name="precion" placeholder="Preción">
-                    </div>
-                    <div class="col-sm-6">
-                      <input type="text" class="form-control form-control-user" id="mucosa" name="mucosa" placeholder="Mucosa">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="observacion" name="observacion" placeholder="Observación">
-                  </div>
-                    <div class="file-field input-field form-group mt-4 file-path-wrapper ">
-                      <input type="file" class="form-control-file file-path validate" id="usuario_doc" name="usuario_doc" accept="application/pdf">
-                    </div>
-                  </div>
-                  <button id="bt_IngresarVisita" class="btn btn-primary btn-user btn-block">Ingresar visita</button>                
-                </form>              
-        </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
