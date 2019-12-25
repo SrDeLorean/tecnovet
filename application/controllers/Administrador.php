@@ -391,7 +391,7 @@ class Administrador extends CI_Controller {
             $usuario_password	= $this->input->post("usuario_password");
             $usuario_perfil = '3';
             $usuario_estado = '1';
-            //---------------Esto da ERROR no reconoce laubicacion "foto" por lo que considera que no hay imagen-----------------
+            //---------------Esto da ERROR no reconoce la ubicacion "foto" por lo que considera que no hay imagen-----------------
             $path 		= $_FILES["usuario_foto"]["tmp_name"];
             $usuario_foto= '';
             if(is_uploaded_file($path) && !empty($_FILES)){
