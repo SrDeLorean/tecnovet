@@ -184,7 +184,7 @@
                   <input type="file" class="form-control-file file-path validate" id="editar_foto" name="foto" accept="image/*">
                 </div>
               </div>
-              <button id="bt_editar" class="btn btn-warning btn-user btn-block">Editar</button>                
+              <button id="bt_editar_usuario" class="btn btn-warning btn-user btn-block">Editar</button>                
             </form>              
           </div>
           <div class="modal-footer">

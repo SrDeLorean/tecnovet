@@ -63,4 +63,5 @@ class Visita extends CI_Model {
     $this->db->WHERE ("mascota_id=ficha_mascota and mascota_usuario=usuario_id and consulta_id=visita_consulta and visita_ficha=ficha_id");
     return $this->db->get();
   }
+
 }

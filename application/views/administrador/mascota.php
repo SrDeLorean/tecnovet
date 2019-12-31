@@ -136,17 +136,14 @@
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control">
+                    <select class="custom-select my-1 mr-sm-2" id="editar_especie" name="especie" placeholder="Especie">
                       <option>Especie</option>
                       <?php
-                        $i = 1;
                         foreach($especies->result() as $row){
                        ?>
-                        <option value=<?php echo $i ?>><?php echo $row->especie_nombre; ?></option>
+                        <option value=<?php echo $row->especie_id; ?>><?php echo $row->especie_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
-                          
                       ?>
                     </select>
                     </div>
@@ -154,12 +151,10 @@
                     <select class="form-control">
                       <option>Raza</option>
                       <?php
-                        $i = 1;
                         foreach($razas->result() as $row){
                        ?>
                         <option value=<?php echo $i ?>><?php echo $row->raza_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
@@ -171,12 +166,10 @@
                     <select class="form-control">
                       <option>Caracter</option>
                       <?php
-                        $i = 1;
                         foreach($caracteres->result() as $row){
                        ?>
                         <option value=<?php echo $i ?>><?php echo $row->caracter_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
@@ -191,7 +184,6 @@
                        ?>
                         <option value=<?php echo $i ?>><?php echo $row->sexo_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
@@ -211,12 +203,10 @@
                     <select class="form-control">
                       <option>Estado</option>
                       <?php
-                        $i = 1;
                         foreach($estados->result() as $row){
                        ?>
                         <option value=<?php echo $i ?>><?php echo $row->estado_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
@@ -269,12 +259,11 @@
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control">
-                    <option>Especie</option>
+                    <select class="custom-select my-1 mr-sm-2" id="editar_especie" name="especie" placeholder="Especie">
                       <?php
                         foreach($especies->result() as $row){
                        ?>
-                        <option id='especie' value=<?php echo $row->especie_id ?>><?php echo $row->especie_nombre; ?></option>
+                        <option id='especie' value=<?php echo $row->especie_id; ?>><?php echo $row->especie_nombre; ?></option>
                       <?php
                         }
                           
@@ -282,17 +271,14 @@
                     </select>
                     </div>
                     <div class="col-sm-6">
-                    <select class="form-control">
-                    <option>Raza</option>
+                    <select class="custom-select my-1 mr-sm-2" id="editar_raza" name="raza" placeholder="Raza">
                       <?php
-                        $i = 1;
                         foreach($razas->result() as $row){
                           if('especie'==$row->raza_especie){
                             ?>
-                            <option value=<?php echo $i ?>><?php echo $row->raza_nombre; ?></option>
+                            <option value=<?php echo $raza_id; ?>><?php echo $row->raza_nombre; ?></option>
                       <?php
                            }
-                          $i=$i+1; 
                         }
                           
                       ?>
@@ -301,30 +287,24 @@
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control">
-                      <option>Caracter</option>
+                    <select class="custom-select my-1 mr-sm-2" id="editar_caracter" name="caracter" placeholder="Caracter">
                       <?php
-                        $i = 1;
                         foreach($caracteres->result() as $row){
                        ?>
-                        <option value=<?php echo $i ?>><?php echo $row->caracter_nombre; ?></option>
+                        <option value=<?php echo $row->caracter_id; ?>><?php echo $row->caracter_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
-                    <select class="form-control">
-                    <option>Sexo</option>
+                    <select class="custom-select my-1 mr-sm-2" id="editar_sexo" name="sexo" placeholder="Sexo">
                       <?php
-                        $i = 1;
                         foreach($sexos->result() as $row){
                        ?>
-                        <option value=<?php echo $i ?>><?php echo $row->sexo_nombre; ?></option>
+                        <option value=<?php echo $row->sexo_id; ?>><?php echo $row->sexo_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
@@ -341,23 +321,19 @@
                   </div>
                   <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
-                    <select class="form-control">
-                    <option>Estado</option>
+                    <select class="custom-select my-1 mr-sm-2" id="editar_estado" name="estado" placeholder="Estado">
                       <?php
-                        $i = 1;
                         foreach($estados->result() as $row){
                        ?>
-                        <option value=<?php echo $i ?>><?php echo $row->estado_nombre; ?></option>
+                        <option value=<?php echo $row->estado_id; ?>><?php echo $row->estado_nombre; ?></option>
                       <?php
-                          $i=$i+1; 
                         }
                           
                       ?>
                     </select>
                     </div>
                     <div class="col-sm-6">
-                    <select class="form-control">
-                      <option>Esterizilización</option>
+                    <select class="custom-select my-1 mr-sm-2" id="editar_esterilizacion" name="esterilizacion" placeholder="Esterilizacion">
                       <option value="1">Si</option>
                       <option value="0">No</option>
                     </select>

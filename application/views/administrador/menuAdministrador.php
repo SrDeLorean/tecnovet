@@ -125,18 +125,24 @@
                       <th>Hora</th>
                     </tr>
                   </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>id</td>
-                      <td>nombre dueño</td>
-                      <td>nombre mascota</td>
-                      <td>especie</td>
-                      <td>caracter</td>
-                      <td>contacto</td>
-                      <td>consulta</td>
-                      <td>hora</td>
-                    </tr>
-                    
+                  <tbody >
+                    <?php
+                        foreach($fichas->result() as $row){
+                    ?>
+                      <tr>
+                          <td> <?php echo $row->ficha_id; ?></td>
+                          <td> <?php echo $row->usuario_nombre," ",$row->usuario_apellido; ?></td>
+                          <td> <?php echo $row->mascota_nombre;?> </td>
+                          <td> <?php echo $row->especie_nombre; ?></td>
+                          <td> <?php echo $row->caracter_nombre; ?></td>
+                          <td> <?php echo $row->usuario_telefono; ?></td>
+                          <td> <?php echo $row->consulta_nombre; ?></td>
+                          <td> <?php echo $row->ficha_control; ?></td>
+                      </tr>
+                      <?php
+                          }
+                          
+                      ?>
                   </tbody>
                 </table>
               </div>

@@ -35,6 +35,7 @@ $( document ).ready(function() {
             }
         });
     });
+    
  //-------------Registrar Usuarios---------
     $("#bt_registrar").click(function(e){
         e.preventDefault();
@@ -55,6 +56,36 @@ $( document ).ready(function() {
             },
             error:function(){
                 alert("Error 500");
+            }
+        });
+    });
+
+    $("#bt_editar_usuario").click(function(e){
+        e.preventDefault();
+        var editar_id = $("#editar_id").val();
+        var editar_nombre = $("#editar_nombre").val();
+        var editar_apellido = $("#editar_apellido").val();
+        var editar_rut = $("#editar_rut").val();
+        var editar_telefono = $("#editar_telefono").val();
+        var editar_direccion = $("#editar_direccion").val();
+        var editar_email = $("#editar_email").val();
+        var editar_contraseña = $("#editar_contraseña").val();
+        var editar_perfil = $("#editar_perfil").val();
+        var editar_estado = $("#editar_estado").val();
+        var  editar_foto = $("#editar_foto").val();
+        
+        console.log(editar_id);
+        $.ajax({
+            url:base_url+'editarUsuario',
+            type:'post',
+            dataType:'json',
+            data:{editar_id:editar_id, editar_nombre:editar_nombre, editar_apellido:editar_apellido, editar_rut:editar_rut, editar_telefono:editar_telefono, editar_direccion:editar_direccion, 
+                editar_email:editar_email, editar_contraseña:editar_contraseña, editar_perfil:editar_perfil, editar_estado:editar_estado, editar_foto:editar_foto},
+            success:function(o){
+                alert(o.msg, "Usuario editado");
+            },
+            error:function(){
+                alert("Error cayo al editar usuario");
             }
         });
     });
@@ -85,7 +116,7 @@ $( document ).ready(function() {
  //----------------Modificar usuario--------------------------------
     $("#bt_editar").click(function(e){
         e.preventDefault();
-        var form = $("#form_editar")[0];
+        var form = $("#form_editar");
         var data = new FormData(form);
         $.ajax({
             url:base_url+'editarUsuario',
@@ -98,7 +129,7 @@ $( document ).ready(function() {
             cache: false,
             timeout: 600000,
             success:function(o){
-                alert(o.msg, "Usuario Editado");
+                alert(o.msg, "dasdasdas");
             },
             error:function(){
                 alert("Error 500");
@@ -276,6 +307,31 @@ $( document ).ready(function() {
             }
         });
     });
+//-------------------------Agregar mascota -------------------------
+$("#bt_mascota_crear").click(function(e){
+    e.preventDefault();
+    var form = $("#form_registrar_mascota")[0];
+    var data = new FormData(form);
+    $.ajax({
+        url:base_url+'crearMascota',
+        type: 'POST',
+        dataType: 'json',
+        data: data,
+        enctype: 'multipart/form-data',
+        processData: false,
+        contentType: false,
+        cache: false,
+        timeout: 600000,
+        success:function(o){
+            alert("Registrado");
+        },
+        error:function(){
+            alert("Error 500");
+        }
+    });
+});
+
+
 //-------------------------mostra modalEditar Caracter Mascota -------------------------
     $(document).ready(function(){
         $('.caracterEditBtn').on('click', function(){

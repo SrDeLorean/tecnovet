@@ -56,4 +56,11 @@ class Ficha extends CI_Model {
     $this->db->where("visitas.visita_ficha = '$id'");
     return $this->db->get();
   }
+
+  public function imprimirFichasPorFecha($fecha){
+    $this->db->SELECT ("ficha_id, usuario_nombre, usuario_apellido, mascota_nombre, especie_nombre, caracter_nombre, usuario_telefono, usuario_email, consulta_nombre, ficha_control");
+    $this->db->FROM ("usuarios,mascotas,consultas, fichas, especies, caracteres");
+    $this->db->WHERE ("mascota_id=ficha_mascota and mascota_usuario=usuario_id and especie_id=mascota_especie and caracter_id=mascota_caracter and consulta_id=ficha_consulta and (ficha_control between '$fecha 0:0:0' and '$fecha 23:59:59')");
+    return $this->db->get();
+  }
 }

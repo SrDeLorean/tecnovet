@@ -47,7 +47,9 @@ class Administrador extends CI_Controller {
     public function index(){
         if($this->session->userdata("administrador")){
             $this->load->view('administrador/templateAdmin/header');
-            $this->load->view('administrador/menuAdministrador');
+            $this->load->database();
+            $data["fichas"] = $this->ficha->imprimirFichasPorFecha("2019-12-13");
+            $this->load->view('administrador/menuAdministrador', $data);
             $this->load->view('administrador/templateAdmin/footer');
         }else{
             redirect('index');
@@ -416,13 +418,13 @@ class Administrador extends CI_Controller {
             $usuario_telefono   = $this->input->post("editar_telefono");
             $usuario_perfil     = $this->input->post("editar_perfil");
             $usuario_estado     = $this->input->post("editar_estado");
-            $usuario_password   = $this->input->post("editar_contaseña");
+            $usuario_password   = $this->input->post("editar_contraseña");
             $usuario_foto       = " ";
-            $path 		        = $_FILES["foto"]["tmp_name"]; // "foto" debe ser el name del input y no el id
+            $path 		        = $_FILES["editar_foto"]["tmp_name"]; // "foto" debe ser el name del input y no el id
             if(is_uploaded_file($path) && !empty($_FILES)){
                 $usuario_foto = file_get_contents($path);
             }
-            if ($this->usuario->modificarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, md5($usuario_password), $usuario_foto)){
+            if ($this->usuario->editarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, md5($usuario_password), $usuario_foto)){
                 echo json_encode(array("msg"=>"Usuario actualizado"));
             }else{
                 echo json_encode(array("msg"=>"Error 500"));

@@ -58,7 +58,8 @@ class Usuario extends CI_Model {
 	 * usuario_password: elemento a modificar
 	 * usuario_foto: elemento a modificar
      */
-    public function modificarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
+    public function editarUsuario($usuario_id, $usuario_rut, $usuario_nombre, $usuario_apellido, $usuario_direccion, $usuario_email, $usuario_telefono, $usuario_perfil, $usuario_estado, $usuario_password, $usuario_foto){
+		$this->db->where("usuario_id", $usuario_id);
 		$data = array("usuario_rut"   =>$usuario_rut,
 					"usuario_nombre"  =>$usuario_nombre,
 					"usuario_apellido"=>$usuario_apellido,
@@ -69,7 +70,6 @@ class Usuario extends CI_Model {
 					"usuario_estado"  =>$usuario_estado,
 					"usuario_password"=>$usuario_password,
 					"usuario_foto"    =>$usuario_foto);
-		$this->db->where("usuario_id", $usuario_id);
 		return $this->db->update("usuarios",$data);
 	}
 
