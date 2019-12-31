@@ -61,7 +61,10 @@
                           <td> <?php echo $row->usuario_rut; ?></td>
                           <td><?php echo $row->mascota_nombre;?> </td>
                           <td><?php echo $row->mascota_microchip;?></td>
-                          <td><button class="btn btn-primary btn-circle m-1 pb-1 visitasFichasBtn" role="button" data-toggle="modalVisitaFicha"><i class="fas fa-search"></i></button></td>
+                          <td>
+                          <button class="btn btn-primary btn-circle m-1 pb-1 visitasFichasBtn" role="button" data-toggle="modalVisitaFicha"><i class="fas fa-search"></i></button>
+                          <button id="bt_IngresarVisita" class="btn btn-primary btn-circle m-1 pb-1" data-toggle="modal" data-target="#modalIngresarVisita"><i class="fas fa-plus"></i></button>
+                          </td>
                           <td> <?php echo $row->ficha_control; ?></td>
                           <td> <?php if($row->ficha_confirmacion == 1){echo "Confirmado";}else{echo "No Confirmado";}; ?></td>
                           <td> <?php echo $row->ficha_creacion; ?></td>
@@ -215,3 +218,91 @@
   </div>
 </div>
 
+<!--Inicio Modal para igresar una visita -->
+
+<div class="modal fade" id="modalIngresarVisita" tabindex="-1" role="dialog" aria-labelledby="modalIngresarVisita" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content modal-lg">
+      <div class="modal-header">
+      <h5 class="modal-title" id="modalIngresarVisita">Ingreso de Visitas  <i class="fas fa-plus"></i></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="p-5">
+            <!-- Por defecto el perfil es "3" usuario y el estado es "1" activo-->
+                <form id="form_registrar" class="user">
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="form-group">
+                    <select class="form-control">
+                      <option>Tipo Consulta</option>
+                      <option value="1">Consulta</option>
+                      <option value="2">Vacuna</option>
+                    </select>
+                  </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="temperatura" name="temperatura" placeholder="Temperatura">
+                    </div>
+                  </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="fr" name="fr" placeholder="FR">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="fc" name="fc" placeholder="FC">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                      <input type="text" class="form-control form-control-user" id="precion" name="precion" placeholder="Preción">
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control form-control-user" id="mucosa" name="mucosa" placeholder="Mucosa">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="observacion" name="observacion" placeholder="Observación">
+                  </div>
+                    <div class="file-field input-field form-group mt-4 file-path-wrapper ">
+                      <input type="file" class="form-control-file file-path validate" id="usuario_doc" name="usuario_doc" accept="application/pdf">
+                    </div>
+                  </div>
+
+                  <h5 class="d-flex justify-content-center">Ingreso Especial  <i class="fas fa-plus"></i></h5>
+                  <hr lass="style2">
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option>Hospitalizacion</option>
+                      <option value="1">Ambulatoria</option>
+                      <option value="2">Vacuna</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option>Vacuna</option>
+                      <option value="1">Coronavirus</option>
+                      <option value="2">Séxtuple</option>
+                      <option value="3">Octuple</option>
+                      <option value="4">Traqueobronquitis</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <select class="form-control">
+                      <option>Tratamiento</option>
+                      <option value="1">Reposo</option>
+                      <option value="2">Antivioticos</option>
+                    </select>
+                  </div>
+                                  
+                </form>              
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -90,8 +90,8 @@
                           <td> <?php echo $row->mascota_creacion; ?></td>
                           <td> <?php echo '<img src="data:image/jpeg;base64,'.base64_encode($row->mascota_foto) .'"class="img-fluid img-responsive " width="75" height="75"/>'; ?></td>
                           <th>
-                          <a class="btn btn-primary btn-circle m-1 pb-1" href="<?php echo base_url()?>detalleMascota" role="button"><i class="fas fa-info"></i></a>
-                            <button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
+                          <button type="button" class="btn btn-primary btn-circle m-1 pb-1" data-toggle="modal" data-target="#detalleMascota"><i class="fas fa-info"></i></button>
+                          <button class="btn btn-warning btn-circle m-1 pb-1 href="#" role="button" data-toggle="modal" data-target="#modalEdit"><i class="fas fa-edit"></i></button></th>
                       
                       </tr>
                       <?php
@@ -377,6 +377,68 @@
     </div>
     </div>
   </div>
+
+<!-- Modal Para ver los detalles de la mascota -->
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="detalleMascota" tabindex="-1" role="dialog" aria-labelledby="detalleMascota" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalleMascotaLabel">Detalle de Mascota</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="d-flex justify-content-center">
+          <img src="assets\img\perfilMapache.jpg" class="rounded-circle">          
+        </div>
+        <br>
+          <h1 class="d-flex justify-content-center">mascota_nombre</h1>
+          <table class="table table-borderless d-flex justify-content-center">
+        <thead>
+        </thead>
+        <tbody >
+          <tr >
+            <th>Dueño</th>
+            <td>usuario_nombre</td>
+            
+            <th>RUT</th>
+            <td>usuario_rut</td>
+          </tr>
+          <tr >
+            <th>Caracter</th>
+            <td>mascota_caracter</td>
+            <th>Microchip</th>
+            <td>mascota_miccrochip</td>
+          </tr>
+          <tr >
+            <th>Nacimiento</th>
+            <td>mascota_nacimiento</td>
+            <th>Sexo</th>
+            <td>mascota_sexo</td>
+          </tr>
+          <tr >
+            <th>Raza</th>
+            <td>mascota_raza</td>
+            <th>Especie</th>
+            <td>mascota_especie</td>
+          </tr>
+        </tbody>
+      </table>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Imprimir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
   <script>
 $(document).ready(function(){
